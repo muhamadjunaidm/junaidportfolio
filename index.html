@@ -1,0 +1,3066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Junaid — Video Editor & Videographer | Malappuram, Kerala</title>
+    <meta name="description"
+        content="Junaid is a freelance Video Editor & Videographer based in Malappuram, Kerala. Specializing in Adobe After Effects, Premiere Pro, color grading, motion graphics, and cinematic storytelling." />
+    <meta name="keywords"
+        content="video editor Kerala, videographer Malappuram, Adobe Premiere Pro, After Effects, freelance video editor India, color grading, motion graphics, seichofi.xyz" />
+    <link rel="canonical" href="https://seichofi.xyz/" />
+    <meta property="og:title" content="Junaid — Video Editor & Videographer | seichofi.xyz" />
+    <meta property="og:description"
+        content="Freelance Video Editor & Videographer based in Malappuram, Kerala. Available for commercial, reels, motion graphics projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seichofi.xyz/" />
+    <meta property="og:site_name" content="Junaid Portfolio — seichofi.xyz" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="seichofi.xyz" />
+    <meta name="twitter:url" content="https://seichofi.xyz/" />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Muhamad Junaid",
+      "url": "https://seichofi.xyz",
+      "jobTitle": "Video Editor & Videographer",
+      "telephone": "+917736050347",
+      "email": "muhamadjunaidm1@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/junaiid.pvt"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Malappuram",
+        "addressRegion": "Kerala",
+        "addressCountry": "India"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#0a0a0a',
+                        charcoal: '#1a1a1a',
+                        iron: '#2a2a2a',
+                        steel: '#3a3a3a',
+                        mist: '#888888',
+                        ghost: '#cccccc',
+                        snow: '#f5f5f5',
+                        accent: '#e8ff00',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        /* ─── CSS RESET & ROOT VARS ─────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --iron: #2a2a2a;
+            --steel: #3a3a3a;
+            --mist: #888888;
+            --ghost: #cccccc;
+            --snow: #f5f5f5;
+            --white: #ffffff;
+            --accent: #e8ff00;
+            --accent-dim: rgba(232, 255, 0, 0.08);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-light: rgba(255, 255, 255, 0.14);
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-hover: rgba(255, 255, 255, 0.08);
+            --radius: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--black);
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--steel);
+            border-radius: 99px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--mist);
+        }
+
+        /* ─── SCROLL REVEAL ──────────────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.35s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: 0.5s;
+        }
+
+        /* ─── NAVBAR ────────────────────────────────────────────── */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 2.5rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom-color: var(--border);
+        }
+
+        .brand {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-left: 2px;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--mist);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--white);
+            transition: var(--transition-fast);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--white);
+            color: var(--black) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 99px;
+            font-size: 0.85rem !important;
+            font-weight: 700 !important;
+            transition: var(--transition) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent) !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--white);
+            transition: var(--transition-fast);
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 4px);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -4px);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(24px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0 2rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links a:hover::after {
+                display: none;
+            }
+
+            .nav-cta {
+                margin: 1rem 2rem 0;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+
+        /* ─── HERO ──────────────────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 96px 2.5rem 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 99px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--ghost);
+            letter-spacing: 0.04em;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 8px #22c55e;
+            animation: pulse-dot 2s ease infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.35;
+            }
+        }
+
+        .location-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            color: var(--mist);
+            letter-spacing: 0.04em;
+        }
+
+        .location-pill svg {
+            width: 11px;
+            height: 11px;
+            fill: #ef4444;
+            flex-shrink: 0;
+        }
+
+        .hero-title {
+            line-height: 0.98;
+            letter-spacing: -0.03em;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title-solid {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 7vw, 7rem);
+            font-weight: 800;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+            /* behind portrait */
+        }
+
+        .hero-title-stroke {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 7vw, 7rem);
+            font-weight: 800;
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+            letter-spacing: -0.03em;
+            position: relative;
+            z-index: 3;
+            /* in front of portrait */
+        }
+
+        /* ── PORTRAIT — absolutely centred, overlapping title ── */
+        .hero-portrait-abs {
+            position: absolute;
+            bottom: 4.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            /* above solid text, below stroke text */
+            pointer-events: none;
+            width: clamp(220px, 26vw, 400px);
+        }
+
+        .hero-portrait-abs img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            filter: grayscale(8%);
+            /* Blends white bg away on dark page */
+            mix-blend-mode: multiply;
+        }
+
+        /* Badge below portrait */
+        .portrait-badge {
+            position: absolute;
+            bottom: 0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            color: var(--black);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            padding: 0.28rem 0.8rem;
+            border-radius: 99px;
+            white-space: nowrap;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* ── BOTTOM BAR ── */
+        .hero-bottom-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 4;
+            flex-wrap: wrap;
+        }
+
+        /* CTAs */
+        .hero-ctas {
+            display: flex;
+            flex-direction: row;
+            gap: 0.85rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.85rem 2rem;
+            background: var(--white);
+            color: var(--black);
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 99px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.85rem 2rem;
+            background: transparent;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-light);
+            border-radius: 99px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-hover);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary svg {
+            width: 18px;
+            height: 18px;
+            fill: #25d366;
+        }
+
+        /* Software badges */
+        .hero-software {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .sw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.5rem 1rem;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--ghost);
+            width: fit-content;
+            transition: var(--transition);
+        }
+
+        .sw-badge:hover {
+            border-color: var(--border-light);
+            color: var(--white);
+            background: var(--glass-hover);
+        }
+
+        .sw-icon {
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 5px;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+        }
+
+        .sw-icon.ae {
+            background: linear-gradient(135deg, #9999FF, #7777cc);
+            color: #fff;
+        }
+
+        .sw-icon.pr {
+            background: linear-gradient(135deg, #9999FF, #8800ff);
+            color: #fff;
+        }
+
+        /* Software badges */
+        .hero-software {
+            display: flex;
+            flex-direction: row;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .sw-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.42rem 0.9rem;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--ghost);
+            width: fit-content;
+            transition: var(--transition);
+        }
+
+        .sw-badge:hover {
+            border-color: var(--border-light);
+            color: var(--white);
+            background: var(--glass-hover);
+        }
+
+        .sw-icon {
+            font-size: 0.68rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 5px;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+        }
+
+        .sw-icon.ae {
+            background: linear-gradient(135deg, #9999FF, #7777cc);
+            color: #fff;
+        }
+
+        .sw-icon.pr {
+            background: linear-gradient(135deg, #9999FF, #8800ff);
+            color: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .hero-portrait-abs {
+                width: clamp(160px, 36vw, 260px);
+                bottom: 3.5rem;
+            }
+
+            .hero-bottom-row {
+                justify-content: center;
+            }
+
+            .hero-title-solid,
+            .hero-title-stroke {
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .hero-portrait-abs {
+                width: clamp(140px, 40vw, 220px);
+                bottom: 3rem;
+            }
+        }
+
+        /* ─── TICKER ─────────────────────────────────────────────── */
+        .ticker {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            padding: 0.9rem 0;
+            background: var(--charcoal);
+        }
+
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            animation: ticker-scroll 32s linear infinite;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes ticker-scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--mist);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .ticker-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* ─── SECTION COMMON ─────────────────────────────────────── */
+        .section {
+            padding: 6rem 2.5rem;
+        }
+
+        .section-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--mist);
+            margin-bottom: 1.25rem;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: var(--mist);
+        }
+
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--white);
+            margin-bottom: 3rem;
+        }
+
+        /* ─── PORTFOLIO ──────────────────────────────────────────── */
+        #works {
+            background: var(--black);
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .filter-row {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 0.6rem;
+                margin-bottom: 2rem;
+                scrollbar-width: none;
+            }
+            .filter-row::-webkit-scrollbar {
+                display: none;
+            }
+            .filter-btn {
+                flex-shrink: 0;
+                white-space: nowrap;
+                padding: 0.55rem 1.1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 99px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--mist);
+            transition: var(--transition-fast);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        .portfolio-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .work-card {
+            display: flex;
+            flex-direction: row;
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: var(--transition);
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .work-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-thumb-box {
+            width: 36%;
+            min-width: 260px;
+            max-width: 400px;
+            position: relative;
+            background: var(--black);
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            flex-shrink: 0;
+        }
+
+        .card-thumb-box img,
+        .card-thumb {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            background: var(--charcoal);
+        }
+
+        .work-card:hover .card-thumb-box img {
+            transform: scale(1.06);
+        }
+
+        .card-thumb-placeholder {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--charcoal), var(--iron));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-thumb-placeholder svg {
+            width: 40px;
+            height: 40px;
+            opacity: 0.22;
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.6;
+            transition: opacity 0.4s;
+        }
+
+        .card-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.85);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            backdrop-filter: blur(4px);
+            z-index: 2;
+        }
+
+        .work-card:hover .card-play-btn {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .card-play-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--black);
+            margin-left: 3px;
+        }
+
+        .card-details-box {
+            flex: 1;
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 0;
+            background: var(--charcoal);
+        }
+
+        .card-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-category {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .card-year-pill {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--ghost);
+            background: var(--iron);
+            padding: 0.12rem 0.55rem;
+            border-radius: 99px;
+            border: 1px solid var(--border);
+        }
+
+        .card-title-text {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-tools-list {
+            display: flex;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-desc-text {
+            font-size: 0.85rem;
+            color: var(--mist);
+            line-height: 1.55;
+            font-weight: 300;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 0.85rem;
+        }
+
+        .card-bottom-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: auto;
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn-watch {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        @media (max-width: 768px) {
+            .work-card {
+                flex-direction: column;
+            }
+            .card-thumb-box {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .card-admin-actions {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .card-admin-btn {
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition-fast);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .card-delete-btn {
+            background: rgba(239, 68, 68, 0.9);
+            color: #fff;
+        }
+
+        .card-delete-btn:hover {
+            background: #dc2626;
+        }
+
+        .card-edit-btn {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            backdrop-filter: blur(8px);
+        }
+
+        .card-edit-btn:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 1rem;
+            text-align: center;
+            gap: 1rem;
+            color: var(--mist);
+        }
+
+        .empty-state svg {
+            width: 48px;
+            height: 48px;
+            opacity: 0.28;
+        }
+
+        /* ─── VIDEO MODAL ─────────────────────────────────────────── */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 9000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease, background 0.4s, backdrop-filter 0.4s;
+        }
+
+        .modal-backdrop.open {
+            opacity: 1;
+            pointer-events: all;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+
+        .modal-box {
+            width: 100%;
+            max-width: 1100px;
+            background: var(--charcoal);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-backdrop.open .modal-box {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-body-layout {
+            display: flex;
+            flex-direction: row;
+            background: #000;
+            min-height: 440px;
+        }
+
+        .modal-video {
+            flex: 1.8;
+            min-width: 0;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+
+        .modal-details {
+            flex: 1;
+            min-width: 280px;
+            padding: 1.75rem;
+            background: var(--charcoal);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 850px) {
+            .modal-body-layout {
+                flex-direction: column;
+            }
+            .modal-details {
+                border-left: none;
+                border-top: 1px solid var(--border);
+            }
+        }
+
+        .modal-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .modal-category {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 0.15rem;
+        }
+
+        .modal-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-fast);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .modal-close:hover {
+            background: var(--glass-hover);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-video {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+
+        .modal-video iframe,
+        .modal-video video {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* ─── ABOUT ──────────────────────────────────────────────── */
+        #about {
+            background: var(--charcoal);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-body {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: var(--ghost);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .services-list {
+            list-style: none;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition-fast);
+            cursor: default;
+        }
+
+        .service-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .service-item:hover {
+            padding-left: 0.5rem;
+        }
+
+        .service-name {
+            font-weight: 600;
+            font-size: 0.98rem;
+            color: var(--white);
+        }
+
+        .service-num {
+            font-size: 0.72rem;
+            color: var(--mist);
+            letter-spacing: 0.1em;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.9rem 1.1rem;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .tool-card:hover {
+            border-color: var(--border-light);
+            background: var(--glass-hover);
+        }
+
+        .tool-icon {
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 4px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.03em;
+            flex-shrink: 0;
+        }
+
+        .tool-icon.ae {
+            background: linear-gradient(135deg, #9999ff, #7777cc);
+            color: #fff;
+        }
+
+        .tool-icon.pr {
+            background: linear-gradient(135deg, #9999ff, #8b00ff);
+            color: #fff;
+        }
+
+        .tool-icon.dv {
+            background: linear-gradient(135deg, #ff6b6b, #e53e3e);
+            color: #fff;
+        }
+
+        .tool-icon.yt {
+            background: linear-gradient(135deg, #333, #222);
+            color: #fff;
+            font-size: 0.85rem;
+        }
+
+        .tool-name {
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--ghost);
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* ─── CONTACT ────────────────────────────────────────────── */
+        #contact {
+            background: var(--black);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-big-text {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+        }
+
+        .contact-big-text span {
+            display: block;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.32);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 1.4rem;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            color: var(--white);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .contact-link:hover {
+            background: var(--glass-hover);
+            border-color: var(--border-light);
+            transform: translateX(4px);
+        }
+
+        .contact-link-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-link-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .contact-link-info {
+            flex: 1;
+        }
+
+        .contact-link-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--mist);
+        }
+
+        .contact-link-value {
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-top: 0.12rem;
+        }
+
+        .contact-link-arrow {
+            color: var(--mist);
+            transition: var(--transition-fast);
+            font-size: 0.9rem;
+        }
+
+        .contact-link:hover .contact-link-arrow {
+            transform: translateX(4px);
+            color: var(--white);
+        }
+
+        @media (max-width: 900px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Copy toast */
+        .copy-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--white);
+            color: var(--black);
+            padding: 0.65rem 1.5rem;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 9999;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ─── FOOTER ─────────────────────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2.5rem;
+            background: var(--charcoal);
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--mist);
+            margin-top: 0.3rem;
+        }
+
+        .footer-admin-btn {
+            font-size: 0.72rem;
+            color: var(--steel);
+            background: none;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.08em;
+            transition: var(--transition-fast);
+            padding: 0.25rem 0.5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .footer-admin-btn:hover {
+            color: var(--mist);
+        }
+
+        /* ─── FLOATING WA ────────────────────────────────────────── */
+        .fab-wa {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+        }
+
+        .fab-wa:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        .fab-wa svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+
+        /* ─── ADMIN AUTH ─────────────────────────────────────────── */
+        .auth-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 9500;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .auth-backdrop.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .auth-box {
+            width: 100%;
+            max-width: 400px;
+            background: var(--charcoal);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            transform: scale(0.92);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .auth-backdrop.open .auth-box {
+            transform: scale(1);
+        }
+
+        .auth-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+        }
+
+        .auth-subtitle {
+            font-size: 0.82rem;
+            color: var(--mist);
+            margin-bottom: 2rem;
+        }
+
+        .pin-display {
+            display: flex;
+            gap: 0.6rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .pin-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--iron);
+            border: 1.5px solid var(--steel);
+            transition: var(--transition-fast);
+        }
+
+        .pin-dot.filled {
+            background: var(--white);
+            border-color: var(--white);
+        }
+
+        .pin-dot.error {
+            background: #ef4444;
+            border-color: #ef4444;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-5px);
+            }
+
+            40% {
+                transform: translateX(5px);
+            }
+
+            60% {
+                transform: translateX(-5px);
+            }
+
+            80% {
+                transform: translateX(5px);
+            }
+        }
+
+        .numpad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+
+        .num-btn {
+            aspect-ratio: 1;
+            border-radius: var(--radius);
+            background: var(--iron);
+            border: 1px solid var(--border);
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .num-btn:hover {
+            background: var(--steel);
+        }
+
+        .num-btn:active {
+            transform: scale(0.93);
+        }
+
+        .num-btn.clear {
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            color: var(--mist);
+        }
+
+        .num-btn.zero {
+            grid-column: 2;
+        }
+
+        .auth-error {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #f87171;
+            margin-top: 1rem;
+            min-height: 1.2em;
+        }
+
+        /* ─── ADMIN PANEL ────────────────────────────────────────── */
+        .admin-panel {
+            position: fixed;
+            inset: 0;
+            z-index: 9200;
+            background: rgba(0, 0, 0, 0.96);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            overflow-y: auto;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s;
+        }
+
+        .admin-panel.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .admin-inner {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 5rem 2rem 4rem;
+        }
+
+        .admin-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .admin-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .admin-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.28rem 0.75rem;
+            background: rgba(232, 255, 0, 0.1);
+            border: 1px solid rgba(232, 255, 0, 0.28);
+            border-radius: 99px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+        }
+
+        .admin-close {
+            padding: 0.5rem 1.25rem;
+            background: var(--iron);
+            border: 1px solid var(--border);
+            border-radius: 99px;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .admin-close:hover {
+            background: var(--steel);
+        }
+
+        .admin-form-card {
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .admin-form-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--ghost);
+        }
+
+        .admin-form-title::before {
+            content: '';
+            width: 3px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 99px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.38rem;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--mist);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background: var(--iron);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 0.72rem 1rem;
+            color: var(--white);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.88rem;
+            transition: var(--transition-fast);
+            outline: none;
+        }
+
+        .form-select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: rgba(255, 255, 255, 0.35);
+            background: var(--steel);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--steel);
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: 1;
+            }
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-submit {
+            padding: 0.72rem 2rem;
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent);
+        }
+
+        .btn-cancel-form {
+            padding: 0.72rem 1.5rem;
+            background: transparent;
+            color: var(--mist);
+            border: 1px solid var(--border);
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-cancel-form:hover {
+            color: var(--white);
+            border-color: var(--border-light);
+        }
+
+        .admin-works-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--mist);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .admin-works-count {
+            font-size: 0.72rem;
+            background: var(--iron);
+            color: var(--ghost);
+            padding: 0.18rem 0.6rem;
+            border-radius: 99px;
+            font-weight: 700;
+        }
+
+        .admin-work-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .admin-work-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1.1rem 1.25rem;
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            transition: var(--transition-fast);
+            margin-bottom: 0.85rem;
+        }
+
+        .admin-work-item:hover {
+            border-color: var(--border-light);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .admin-work-thumb {
+            width: 140px;
+            height: 90px;
+            border-radius: var(--radius);
+            object-fit: cover;
+            background: var(--iron);
+            flex-shrink: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .admin-work-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .admin-work-thumb svg {
+            width: 24px;
+            height: 24px;
+            opacity: 0.28;
+        }
+
+        .admin-work-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .admin-work-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .admin-badge-pill {
+            display: inline-block;
+            background: var(--iron);
+            color: var(--ghost);
+            padding: 0.15rem 0.55rem;
+            border-radius: 99px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        .admin-work-desc {
+            font-size: 0.8rem;
+            color: var(--mist);
+            line-height: 1.45;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .admin-work-actions {
+            display: flex;
+            gap: 0.45rem;
+            flex-shrink: 0;
+        }
+
+        .admin-action-btn {
+            padding: 0.32rem 0.72rem;
+            border-radius: 7px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: var(--iron);
+            color: var(--ghost);
+            transition: var(--transition-fast);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .admin-action-btn:hover {
+            background: var(--steel);
+            color: var(--white);
+        }
+
+        .admin-action-btn.danger:hover {
+            background: rgba(239, 68, 68, 0.18);
+            border-color: rgba(239, 68, 68, 0.4);
+            color: #fca5a5;
+        }
+
+        .admin-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--mist);
+            font-size: 0.88rem;
+            background: var(--charcoal);
+            border: 1px dashed var(--border);
+            border-radius: var(--radius-lg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- COPY TOAST -->
+    <div class="copy-toast" id="copy-toast">✓ Email copied!</div>
+
+    <!-- ════════════════════ NAVBAR ════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="brand" aria-label="Junaid Portfolio">
+            Junaid<span class="brand-dot"></span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#works">Works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="https://wa.me/917736050347?text=Hi%20Junaid%2C%20I%27m%20interested%20in%20working%20with%20you!"
+                    target="_blank" rel="noopener" class="nav-cta" id="nav-wa">Hire Me</a>
+            </li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ════════════════════ HERO ════════════════════ -->
+    <header class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-meta-row reveal">
+                <div class="status-pill">
+                    <span class="status-dot"></span>Available for Projects
+                </div>
+                <div class="location-pill">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    Malappuram, Kerala, India
+                </div>
+            </div>
+
+            <!-- Portrait: absolutely centred, overlapping both title lines -->
+            <div class="hero-portrait-abs">
+                <img src="hero_portrait.png" alt="Junaid - Freelance Video Editor and Videographer, Malappuram Kerala"
+                    onerror="this.style.display='none';document.getElementById('portrait-fallback').style.display='flex';" />
+                <div id="portrait-fallback"
+                    style="display:none;align-items:center;justify-content:center;font-size:4rem;">&#127916;</div>
+                <div class="portrait-badge"><span class="status-dot"></span>JUNAID &middot; VIDEO EDITOR</div>
+            </div>
+
+            <!-- TITLE - z-index layered around portrait -->
+            <div class="hero-title reveal reveal-delay-1">
+                <span class="hero-title-solid">Video Editor</span>
+                <span class="hero-title-stroke">&amp; Videographer</span>
+            </div>
+
+            <!-- BOTTOM BAR -->
+            <div class="hero-bottom-row">
+                <!-- Location -->
+                <div class="location-pill reveal reveal-delay-2" style="font-size:.82rem;">
+                    <svg viewBox="0 0 24 24" style="width:11px;height:11px;fill:#ef4444;flex-shrink:0;">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    Based in Malappuram, Kerala, India
+                </div>
+
+                <!-- Software Badges -->
+                <div class="hero-software reveal reveal-delay-2">
+                    <div class="sw-badge"><span class="sw-icon ae">Ae</span>After Effects</div>
+                    <div class="sw-badge"><span class="sw-icon pr">Pr</span>Premiere Pro</div>
+                    <div class="sw-badge"><span style="font-size:.82rem;">&#10022;</span>Motion Design</div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="hero-ctas reveal reveal-delay-3">
+                    <a href="#works" class="btn-primary">
+                        View Portfolio
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <polyline points="19 12 12 19 5 12" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/917736050347?text=Hi%20Junaid!" target="_blank" rel="noopener"
+                        class="btn-secondary" id="hero-wa">
+                        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#25d366;flex-shrink:0;">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        WhatsApp Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ════════════════════ TICKER ════════════════════ -->
+    <div class="ticker" aria-hidden="true">
+        <div class="ticker-track" id="ticker-track"></div>
+    </div>
+
+    <!-- ════════════════════ PORTFOLIO ════════════════════ -->
+    <section class="section" id="works">
+        <div class="section-inner">
+            <div class="reveal">
+                <span class="section-label">Selected Works</span>
+                <h2 class="section-title">Crafting Visual Impact</h2>
+            </div>
+            <div class="filter-row reveal reveal-delay-1" id="filter-row">
+                <button class="filter-btn active" data-cat="All">All</button>
+                <button class="filter-btn" data-cat="Color Grading">Color Grading</button>
+                <button class="filter-btn" data-cat="Commercial">Commercial</button>
+                <button class="filter-btn" data-cat="Event Teaser">Event Teaser</button>
+                <button class="filter-btn" data-cat="Motion Graphics">Motion Graphics</button>
+                <button class="filter-btn" data-cat="Reels">Reels</button>
+                <button class="filter-btn" data-cat="Videography">Videography</button>
+            </div>
+            <div class="portfolio-grid reveal reveal-delay-2" id="portfolio-grid"></div>
+        </div>
+    </section>
+
+    <!-- ════════════════════ VIDEO MODAL ════════════════════ -->
+    <div class="modal-backdrop" id="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-title" id="modal-title"></div>
+                    <div class="modal-category" id="modal-category"></div>
+                </div>
+                <button class="modal-close" id="modal-close" aria-label="Close">&#x2715;</button>
+            </div>
+            <div class="modal-body-layout">
+                <div class="modal-video" id="modal-video-container"></div>
+                <div class="modal-details" id="modal-details-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════ ABOUT ════════════════════ -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="reveal">
+                    <span class="section-label">About Junaid</span>
+                    <h2 class="section-title" style="margin-bottom:1.5rem;">High-Energy Editing &amp; Cinematic
+                        Storytelling</h2>
+                    <p class="about-body">Based in Malappuram, Kerala, I'm a passionate freelance Video Editor and
+                        Videographer specializing in high-converting commercial edits, dynamic social reels, and
+                        striking motion graphics.</p>
+                    <p class="about-body">Whether you need sharp multi-cam cuts, cinematic color grading, or fast-paced
+                        motion graphics in Adobe Premiere Pro and After Effects — I turn raw footage into engaging
+                        visual experiences that captivate audiences.</p>
+                    <p class="about-body" style="color:var(--mist);font-size:.88rem;">📍 Available for local shoots
+                        across Malappuram &amp; Kerala, and remote editing worldwide.</p>
+                    <div class="tools-grid">
+                        <div class="tool-card"><span class="tool-icon ae">Ae</span><span class="tool-name">After
+                                Effects</span></div>
+                        <div class="tool-card"><span class="tool-icon pr">Pr</span><span class="tool-name">Premiere
+                                Pro</span></div>
+                        <div class="tool-card"><span class="tool-icon dv">Dv</span><span class="tool-name">DaVinci
+                                Resolve</span></div>
+                        <div class="tool-card"><span class="tool-icon yt">▶</span><span class="tool-name">4K
+                                Videography</span></div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <span class="section-label">Capabilities</span>
+                    <ul class="services-list">
+                        <li class="service-item"><span class="service-name">Commercial &amp; Brand Video
+                                Editing</span><span class="service-num">01</span></li>
+                        <li class="service-item"><span class="service-name">On-Location 4K Videography</span><span
+                                class="service-num">02</span></li>
+                        <li class="service-item"><span class="service-name">Motion Graphics &amp; Title
+                                Animations</span><span class="service-num">03</span></li>
+                        <li class="service-item"><span class="service-name">Cinematic Color Grading</span><span
+                                class="service-num">04</span></li>
+                        <li class="service-item"><span class="service-name">Viral Reels &amp; Vertical
+                                Content</span><span class="service-num">05</span></li>
+                        <li class="service-item"><span class="service-name">Sound Design &amp; Audio Sync</span><span
+                                class="service-num">06</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════ CONTACT ════════════════════ -->
+    <section class="section" id="contact" style="background:var(--black);">
+        <div class="section-inner">
+            <div class="contact-wrapper">
+                <div class="reveal">
+                    <span class="section-label">Let's Work Together</span>
+                    <div class="contact-big-text">Have a project<br /><span>in mind?</span></div>
+                    <p style="color:var(--mist);font-size:.93rem;line-height:1.85;font-weight:300;">
+                        Ready to collaborate on your next video. Based in Malappuram, Kerala — available locally and
+                        globally for remote editing.
+                    </p>
+                </div>
+                <div class="contact-links reveal reveal-delay-2">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/917736050347?text=Hi%20Junaid%2C%20I%27m%20interested%20in%20working%20with%20you!"
+                        target="_blank" rel="noopener" class="contact-link" id="contact-wa">
+                        <div class="contact-link-icon" style="background:rgba(37,211,102,0.12);">
+                            <svg viewBox="0 0 24 24" fill="#25d366">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                        </div>
+                        <div class="contact-link-info">
+                            <div class="contact-link-label">WhatsApp</div>
+                            <div class="contact-link-value">Start a Conversation</div>
+                        </div>
+                        <span class="contact-link-arrow">&#8594;</span>
+                    </a>
+                    <!-- Email -->
+                    <div class="contact-link" role="button" tabindex="0" id="email-link" onclick="copyEmail()"
+                        onkeydown="if(event.key==='Enter')copyEmail()">
+                        <div class="contact-link-icon" style="background:rgba(255,255,255,0.07);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div class="contact-link-info">
+                            <div class="contact-link-label">Email</div>
+                            <div class="contact-link-value" id="email-display">muhamadjunaidm1@gmail.com</div>
+                        </div>
+                        <span class="contact-link-arrow" style="font-size:.72rem;color:var(--mist);">Copy</span>
+                    </div>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/junaiid.pvt" target="_blank" rel="noopener" class="contact-link">
+                        <div class="contact-link-icon"
+                            style="background:linear-gradient(135deg,rgba(214,41,118,.15),rgba(255,148,35,.12));">
+                            <svg viewBox="0 0 24 24" style="fill:url(#ig-g)">
+                                <defs>
+                                    <linearGradient id="ig-g" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#f09433" />
+                                        <stop offset="25%" stop-color="#e6683c" />
+                                        <stop offset="50%" stop-color="#dc2743" />
+                                        <stop offset="75%" stop-color="#cc2366" />
+                                        <stop offset="100%" stop-color="#bc1888" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </div>
+                        <div class="contact-link-info">
+                            <div class="contact-link-label">Instagram</div>
+                            <div class="contact-link-value">@junaiid.pvt</div>
+                        </div>
+                        <span class="contact-link-arrow">&#8594;</span>
+                    </a>
+                    <!-- Location -->
+                    <div class="contact-link" style="cursor:default;">
+                        <div class="contact-link-icon" style="background:rgba(239,68,68,.12);">
+                            <svg viewBox="0 0 24 24" fill="#ef4444">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                        </div>
+                        <div class="contact-link-info">
+                            <div class="contact-link-label">Based in</div>
+                            <div class="contact-link-value">Malappuram District, Kerala, India</div>
+                        </div>
+                        <span class="contact-link-arrow" style="opacity:0;">&#8594;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════ FOOTER ════════════════════ -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <a href="#" class="brand" style="font-size:1.1rem;">Junaid<span class="brand-dot"></span></a>
+                <p class="footer-copy">© 2026 Junaid · Video Editor &amp; Videographer · Malappuram, Kerala, India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ════════════════════ FLOATING WA ════════════════════ -->
+    <a href="https://wa.me/917736050347?text=Hi%20Junaid%2C%20I%20have%20a%20video%20project%20for%20you!"
+        target="_blank" rel="noopener" class="fab-wa" aria-label="Chat on WhatsApp" id="fab-wa">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <!-- ════════════════════ ADMIN AUTH MODAL ════════════════════ -->
+    <div class="auth-backdrop" id="auth-modal" role="dialog" aria-modal="true" aria-label="Admin authentication">
+        <div class="auth-box">
+            <div class="auth-title">Admin Portal</div>
+            <div class="auth-subtitle">Enter your 4-digit PIN to manage the portfolio.</div>
+            <div class="pin-display" id="pin-display">
+                <div class="pin-dot" id="pd-0"></div>
+                <div class="pin-dot" id="pd-1"></div>
+                <div class="pin-dot" id="pd-2"></div>
+                <div class="pin-dot" id="pd-3"></div>
+            </div>
+            <div class="numpad">
+                <button class="num-btn" data-num="1">1</button>
+                <button class="num-btn" data-num="2">2</button>
+                <button class="num-btn" data-num="3">3</button>
+                <button class="num-btn" data-num="4">4</button>
+                <button class="num-btn" data-num="5">5</button>
+                <button class="num-btn" data-num="6">6</button>
+                <button class="num-btn" data-num="7">7</button>
+                <button class="num-btn" data-num="8">8</button>
+                <button class="num-btn" data-num="9">9</button>
+                <button class="num-btn clear" data-action="clear">CLR</button>
+                <button class="num-btn zero" data-num="0">0</button>
+                <button class="num-btn" data-action="backspace">&#x232B;</button>
+            </div>
+            <div class="auth-error" id="auth-error"></div>
+            <button onclick="closeAuthModal()"
+                style="width:100%;margin-top:1.25rem;padding:.65rem;background:transparent;border:1px solid var(--border);border-radius:var(--radius);color:var(--mist);font-size:.85rem;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:color .2s;"
+                onmouseover="this.style.color='var(--white)'"
+                onmouseout="this.style.color='var(--mist)'">Cancel</button>
+        </div>
+    </div>
+
+    <!-- ════════════════════ FRAME PICKER MODAL ════════════════════ -->
+    <div class="auth-backdrop" id="frame-picker-modal" role="dialog" aria-modal="true" aria-label="Select Thumbnail Frame">
+        <div class="auth-box" style="max-width:700px;width:95%;padding:1.75rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                <div>
+                    <div class="auth-title" style="font-size:1.25rem;">Select Thumbnail Frame</div>
+                    <div style="font-size:.78rem;color:var(--mist);margin-top:.2rem;">Play or drag the scrub slider to choose the exact video frame for your thumbnail.</div>
+                </div>
+                <button onclick="closeFramePickerModal()" class="modal-close" style="width:32px;height:32px;">&#x2715;</button>
+            </div>
+            
+            <!-- Video Preview Container -->
+            <div style="position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--radius);overflow:hidden;margin-bottom:1rem;border:1px solid var(--border);">
+                <video id="picker-video" style="width:100%;height:100%;object-fit:contain;" controls></video>
+                <canvas id="picker-canvas" style="display:none;"></canvas>
+            </div>
+            
+            <!-- Timeline Scrubber -->
+            <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem;background:var(--charcoal);padding:.85rem;border-radius:var(--radius);border:1px solid var(--border);">
+                <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ghost);font-weight:600;">
+                    <span>⏱ Scrub Video Frame:</span>
+                    <span id="picker-time-display" style="color:var(--accent);font-family:monospace;">0:00 / 0:00</span>
+                </div>
+                <input type="range" id="picker-timeline" min="0" max="100" value="0" step="0.1" style="width:100%;accent-color:var(--accent);cursor:pointer;height:6px;" oninput="onPickerScrub(this.value)" />
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display:flex;gap:.75rem;justify-content:flex-end;">
+                <button type="button" onclick="closeFramePickerModal()" class="btn-cancel-form">Cancel</button>
+                <button type="button" onclick="captureSelectedFrame()" class="btn-submit" style="background:var(--accent);color:var(--black);font-weight:700;padding:.65rem 1.4rem;">
+                    🎯 Capture &amp; Use This Frame
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════ ADMIN DASHBOARD ════════════════════ -->
+    <div class="admin-panel" id="admin-panel" role="dialog" aria-modal="true" aria-label="Admin dashboard">
+        <div class="admin-inner">
+            <div class="admin-topbar">
+                <div>
+                    <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
+                        <span class="admin-title">Dashboard</span>
+                        <span class="admin-badge">&#9889; Admin Mode</span>
+                    </div>
+                    <p style="font-size:.78rem;color:var(--mist);margin-top:.25rem;">Manage Junaid's portfolio · Changes
+                        persist in localStorage</p>
+                </div>
+                <button class="admin-close" id="admin-panel-close">&#x2715; Close</button>
+            </div>
+
+            <!-- FORM -->
+            <div class="admin-form-card">
+                <div class="admin-form-title" id="form-mode-label">Add New Work</div>
+                <form id="admin-work-form" autocomplete="off">
+                    <input type="hidden" id="edit-id" value="" />
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="f-title">Project Title *</label>
+                            <input type="text" id="f-title" class="form-input" placeholder="e.g. Brand Promo Reel 2026"
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="f-category">Category *</label>
+                            <select id="f-category" class="form-input form-select" required>
+                                <option value="">— Select Category —</option>
+                                <option value="Color Grading">Color Grading</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Event Teaser">Event Teaser</option>
+                                <option value="Motion Graphics">Motion Graphics</option>
+                                <option value="Reels">Reels</option>
+                                <option value="Videography">Videography</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="f-video">Video File or URL *</label>
+                            <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;">
+                                <input type="text" id="f-video" class="form-input" style="flex:1;min-width:220px;"
+                                    placeholder="Paste YouTube link, local path (e.g. C:\Videos\reel.mp4 or /uploads/video.mp4)" required />
+                                <label for="f-file-picker" class="admin-action-btn" style="padding:.6rem 1rem;background:var(--steel);color:var(--white);border-radius:var(--radius);cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;">
+                                    📁 Choose Video File...
+                                </label>
+                                <input type="file" id="f-file-picker" accept="video/*" style="display:none;" onchange="handleFileUpload(this)" />
+                            </div>
+                            <span id="upload-status" style="font-size:.75rem;color:var(--mist);margin-top:.25rem;display:block;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="f-thumb">Thumbnail Image URL</label>
+                            <div style="display:flex;gap:.5rem;">
+                                <input type="text" id="f-thumb" class="form-input" style="flex:1;"
+                                    placeholder="Auto-generated from video on save if blank" />
+                                <button type="button" class="admin-action-btn" onclick="openFramePickerModal()" style="white-space:nowrap;padding:.5rem .85rem;background:var(--accent);color:var(--black);font-weight:700;">
+                                    🎬 Pick Frame from Video
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="f-year">Year</label>
+                            <input type="number" id="f-year" class="form-input" placeholder="2026" min="2000" max="2099"
+                                value="2026" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="f-tools">Tools Used</label>
+                            <input type="text" id="f-tools" class="form-input"
+                                placeholder="Premiere Pro, After Effects…" />
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="f-desc">Short Description</label>
+                            <textarea id="f-desc" class="form-textarea"
+                                placeholder="Brief details about the project, editing style, color grading…"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel-form" id="form-reset-btn">Reset</button>
+                        <button type="submit" class="btn-submit" id="form-submit-btn">💾 Save &amp; Finalize Video</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- WORK LIST -->
+            <div class="admin-works-title">
+                <span>Portfolio Works</span>
+                <span class="admin-works-count" id="admin-works-count">0</span>
+            </div>
+            <div class="admin-work-list" id="admin-work-list"></div>
+        </div>
+    </div>
+
+    <!-- ════════════════════ JAVASCRIPT ════════════════════ -->
+    <script>
+        'use strict';
+
+        /* ── CONFIG ── Change these! ── */
+        const ADMIN_PIN = '1234';
+        const WHATSAPP_NUMBER = '917736050347';
+        const EMAIL_ADDRESS = 'muhamadjunaidm1@gmail.com';
+        const INSTAGRAM_URL = 'https://www.instagram.com/junaiid.pvt';
+        const LS_KEY = 'junaid_portfolio_v3';
+
+        /* ── DEFAULT WORKS ── */
+        const DEFAULT_WORKS = [
+            { id: 'w001', title: 'Cinematic Brand Reel', category: 'Commercial', videoUrl: 'https://www.youtube.com/watch?v=ScMzIvxBSi4', thumbUrl: 'https://img.youtube.com/vi/ScMzIvxBSi4/maxresdefault.jpg', year: '2026', tools: 'Premiere Pro, After Effects', desc: 'High-energy commercial cut with fast transitions, rhythmic sound design, and custom color grading.' },
+            { id: 'w002', title: 'Kerala Cinematic Journey', category: 'Videography', videoUrl: 'https://www.youtube.com/watch?v=L_LUpnjgPso', thumbUrl: 'https://img.youtube.com/vi/L_LUpnjgPso/maxresdefault.jpg', year: '2025', tools: 'Sony FX3, Premiere Pro', desc: 'Atmospheric 4K videography highlighting the lush landscapes, backwaters, and vibrant culture of Kerala.' },
+            { id: 'w003', title: 'Urban Motion Graphics Intro', category: 'Motion Graphics', videoUrl: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ', thumbUrl: 'https://img.youtube.com/vi/aqz-KE-bpKQ/maxresdefault.jpg', year: '2025', tools: 'After Effects, Element 3D', desc: 'Sleek 3D motion typography and fluid title animations for brand campaign intros.' },
+            { id: 'w004', title: 'Wedding Event Teaser', category: 'Event Teaser', videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', thumbUrl: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg', year: '2025', tools: 'Premiere Pro, Color Grading', desc: 'Cinematic wedding teaser with dreamy color grading, slow-motion highlights, and emotional storytelling.' },
+            { id: 'w005', title: 'Viral Instagram Reel', category: 'Reels', videoUrl: 'https://www.youtube.com/watch?v=ScMzIvxBSi4', thumbUrl: 'https://img.youtube.com/vi/ScMzIvxBSi4/hqdefault.jpg', year: '2026', tools: 'Premiere Pro, Kinematic Captions', desc: 'Vertical format reel optimized for Instagram with dynamic punch-in cuts and engaging sound effects.' },
+            { id: 'w006', title: 'Product Color Grading Showreel', category: 'Color Grading', videoUrl: 'https://www.youtube.com/watch?v=L_LUpnjgPso', thumbUrl: 'https://img.youtube.com/vi/L_LUpnjgPso/hqdefault.jpg', year: '2025', tools: 'DaVinci Resolve, Premiere Pro', desc: 'Premium product color grading showcasing cinematic LUTs, skin tone correction, and brand-aligned visuals.' }
+        ];
+
+        /* ── STATE ── */
+        const state = { works: [], activeCategory: 'All', adminOpen: false };
+
+        /* ── STORAGE ── */
+        function loadStorage() {
+            try { const r = localStorage.getItem(LS_KEY); if (r) { const p = JSON.parse(r); if (Array.isArray(p) && p.length) return p; } } catch (e) { }
+            return null;
+        }
+        function saveStorage() { try { localStorage.setItem(LS_KEY, JSON.stringify(state.works)); } catch (e) { } }
+
+        /* ── URL HELPERS ── */
+        function getYtId(url) {
+            if (!url) return null;
+            const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([^&?\s]+)/);
+            return m ? m[1] : null;
+        }
+        function getEmbedUrl(url) {
+            const ytId = getYtId(url);
+            if (ytId) return 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0&modestbranding=1';
+            const vm = url && url.match(/vimeo\.com\/(\d+)/);
+            if (vm) return 'https://player.vimeo.com/video/' + vm[1] + '?autoplay=1';
+            return url;
+        }
+        function getYtThumb(url) {
+            const id = getYtId(url);
+            return id ? 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg' : null;
+        }
+        function isDirectVideo(url) {
+            if (!url) return false;
+            const s = url.trim();
+            if (/\.(mp4|webm|ogg|mov|mkv|avi)(\?.*)?$/i.test(s)) return true;
+            if (s.startsWith('/uploads/') || s.startsWith('blob:') || s.startsWith('file:') || s.startsWith('data:video')) return true;
+            return false;
+        }
+        function getDirectVideoSrc(url) {
+            if (!url) return '';
+            let s = url.trim();
+            if (/^[a-zA-Z]:\\/.test(s)) {
+                s = 'file:///' + s.replace(/\\/g, '/');
+            }
+            return s;
+        }
+        function handleFileUpload(input) {
+            const file = input.files && input.files[0];
+            if (!file) return;
+            const statusEl = document.getElementById('upload-status');
+            statusEl.textContent = 'Uploading ' + file.name + '...';
+            statusEl.style.color = 'var(--accent)';
+
+            fetch('/api/upload', {
+                method: 'POST',
+                headers: {
+                    'X-Filename': file.name,
+                    'Content-Type': file.type || 'application/octet-stream'
+                },
+                body: file
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.url) {
+                    document.getElementById('f-video').value = data.url;
+                    statusEl.textContent = '✓ Saved to uploads/' + data.filename;
+                    statusEl.style.color = '#22c55e';
+                } else {
+                    throw new Error(data.error || 'Upload failed');
+                }
+            })
+            .catch(err => {
+                const localUrl = URL.createObjectURL(file);
+                document.getElementById('f-video').value = localUrl;
+                statusEl.textContent = '✓ Loaded file: ' + file.name;
+                statusEl.style.color = '#22c55e';
+            });
+        }
+
+        function extractVideoThumbnail(videoSrc) {
+            return new Promise((resolve) => {
+                if (!videoSrc) return resolve('');
+                const ytThumb = getYtThumb(videoSrc);
+                if (ytThumb) return resolve(ytThumb);
+
+                const video = document.createElement('video');
+                video.crossOrigin = 'anonymous';
+                video.src = getDirectVideoSrc(videoSrc);
+                video.muted = true;
+                video.currentTime = 1.0;
+
+                video.onloadeddata = () => {
+                    video.currentTime = Math.min(1.0, video.duration ? video.duration / 2 : 1.0);
+                };
+
+                video.onseeked = () => {
+                    try {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = video.videoWidth || 640;
+                        canvas.height = video.videoHeight || 360;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                        const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+                        resolve(dataUrl);
+                    } catch (e) {
+                        resolve('');
+                    }
+                };
+
+                video.onerror = () => resolve('');
+                setTimeout(() => resolve(''), 3500);
+            });
+        }
+
+        let pickerVideoEl = null;
+
+        function openFramePickerModal() {
+            const videoUrl = document.getElementById('f-video').value.trim();
+            if (!videoUrl) {
+                alert('Please choose or paste a Video File or URL first.');
+                return;
+            }
+
+            const modal = document.getElementById('frame-picker-modal');
+            pickerVideoEl = document.getElementById('picker-video');
+            const src = getDirectVideoSrc(videoUrl);
+
+            if (getYtId(videoUrl)) {
+                const ytThumb = getYtThumb(videoUrl);
+                if (ytThumb) {
+                    document.getElementById('f-thumb').value = ytThumb;
+                    const statusEl = document.getElementById('upload-status');
+                    statusEl.textContent = '✓ Using YouTube Thumbnail!';
+                    statusEl.style.color = '#22c55e';
+                    return;
+                }
+            }
+
+            pickerVideoEl.src = src;
+            pickerVideoEl.onloadedmetadata = () => {
+                const slider = document.getElementById('picker-timeline');
+                slider.min = 0;
+                slider.max = pickerVideoEl.duration || 100;
+                slider.value = Math.min(1.0, pickerVideoEl.duration / 2);
+                pickerVideoEl.currentTime = slider.value;
+                updatePickerTimeDisplay();
+            };
+
+            pickerVideoEl.ontimeupdate = () => {
+                const slider = document.getElementById('picker-timeline');
+                slider.value = pickerVideoEl.currentTime;
+                updatePickerTimeDisplay();
+            };
+
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFramePickerModal() {
+            const modal = document.getElementById('frame-picker-modal');
+            if (pickerVideoEl) {
+                pickerVideoEl.pause();
+                pickerVideoEl.removeAttribute('src');
+            }
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function onPickerScrub(val) {
+            if (pickerVideoEl) {
+                pickerVideoEl.currentTime = parseFloat(val);
+                updatePickerTimeDisplay();
+            }
+        }
+
+        function updatePickerTimeDisplay() {
+            if (!pickerVideoEl) return;
+            const cur = formatTime(pickerVideoEl.currentTime || 0);
+            const dur = formatTime(pickerVideoEl.duration || 0);
+            const el = document.getElementById('picker-time-display');
+            if (el) el.textContent = cur + ' / ' + dur;
+        }
+
+        function formatTime(sec) {
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        function captureSelectedFrame() {
+            if (!pickerVideoEl) return;
+            try {
+                const canvas = document.getElementById('picker-canvas');
+                canvas.width = pickerVideoEl.videoWidth || 640;
+                canvas.height = pickerVideoEl.videoHeight || 360;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(pickerVideoEl, 0, 0, canvas.width, canvas.height);
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
+
+                document.getElementById('f-thumb').value = dataUrl;
+                const statusEl = document.getElementById('upload-status');
+                statusEl.textContent = '✓ Frame captured at ' + formatTime(pickerVideoEl.currentTime) + '!';
+                statusEl.style.color = '#22c55e';
+                closeFramePickerModal();
+            } catch (e) {
+                alert('Could not capture frame from this video source. Please paste an image URL or choose a local video file.');
+            }
+        }
+
+        /* ── HTML ESCAPE ── */
+        function esc(s) {
+            if (!s) return '';
+            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+        }
+
+        /* ── TICKER ── */
+        function initTicker() {
+            const items = ['Video Editing', '4K Videography', 'Motion Graphics', 'Instagram Reels', 'Color Grading', 'Commercial Promos', 'Malappuram · Kerala', 'Adobe Premiere Pro', 'After Effects', 'Sound Design', 'Event Teasers', 'Freelance Available'];
+            const html = [...items, ...items].map(t => '<div class="ticker-item"><span class="ticker-dot"></span>' + t + '</div>').join('');
+            document.getElementById('ticker-track').innerHTML = html;
+        }
+
+        /* ── PORTFOLIO GRID ── */
+        function renderGrid() {
+            const grid = document.getElementById('portfolio-grid');
+            if (!grid) return;
+            const filtered = state.activeCategory === 'All' ? state.works : state.works.filter(w => (w.category || '').toLowerCase() === state.activeCategory.toLowerCase());
+            if (!filtered.length) {
+                grid.innerHTML = '<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg><p style="font-weight:600;font-size:.95rem;">No works in &ldquo;' + esc(state.activeCategory) + '&rdquo; yet.</p><p style="font-size:.8rem;opacity:.7;">Add some via the Admin Dashboard.</p></div>';
+                return;
+            }
+
+            grid.innerHTML = filtered.map(w => {
+                const thumb = w.thumbUrl || getYtThumb(w.videoUrl || '') || '';
+                const toolsBadges = (w.tools || '').split(',').map(t => t.trim()).filter(Boolean).map(t => '<span class="admin-badge-pill">' + esc(t) + '</span>').join(' ');
+                const adminBtns = state.adminOpen ? '<div style="display:flex;gap:.4rem;"><button class="admin-action-btn" onclick="event.stopPropagation();adminEditWork(\'' + esc(w.id) + '\')" aria-label="Edit">Edit</button><button class="admin-action-btn danger" onclick="event.stopPropagation();deleteWork(\'' + esc(w.id) + '\')" aria-label="Delete">Delete</button></div>' : '';
+
+                // Background auto-capture thumbnail if missing
+                if (!w.thumbUrl && w.videoUrl) {
+                    extractVideoThumbnail(w.videoUrl).then(dataUrl => {
+                        if (dataUrl) {
+                            w.thumbUrl = dataUrl;
+                            saveStorage();
+                            const imgEl = document.getElementById('thumb-img-' + w.id);
+                            if (imgEl) {
+                                imgEl.src = dataUrl;
+                                imgEl.style.display = 'block';
+                                if (imgEl.nextElementSibling) imgEl.nextElementSibling.style.display = 'none';
+                            }
+                        }
+                    });
+                }
+
+                return '<div class="work-card" onclick="openModal(\'' + esc(w.id) + '\')" role="button" tabindex="0" aria-label="Play ' + esc(w.title) + '" onkeydown="if(event.key===\'Enter\')openModal(\'' + esc(w.id) + '\')">'
+                    + '<div class="card-thumb-box">'
+                    + (thumb ? '<img class="card-thumb" id="thumb-img-' + esc(w.id) + '" src="' + esc(thumb) + '" alt="' + esc(w.title) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" />' : '')
+                    + '<div class="card-thumb-placeholder" ' + (thumb ? 'style="display:none"' : '') + '>'
+                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>'
+                    + '</div>'
+                    + '<div class="card-overlay"></div>'
+                    + '<div class="card-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>'
+                    + '</div>'
+                    + '<div class="card-details-box">'
+                    + '<div>'
+                    + '<div class="card-meta-row">'
+                    + '<span class="card-category">&#9670; ' + esc(w.category || 'Video') + '</span>'
+                    + (w.year ? '<span class="card-year-pill">' + esc(w.year) + '</span>' : '')
+                    + '</div>'
+                    + '<h3 class="card-title-text">' + esc(w.title) + '</h3>'
+                    + (toolsBadges ? '<div class="card-tools-list">' + toolsBadges + '</div>' : '')
+                    + (w.desc ? '<p class="card-desc-text">' + esc(w.desc) + '</p>' : '<p class="card-desc-text" style="font-style:italic;">No description provided.</p>')
+                    + '</div>'
+                    + '<div class="card-bottom-actions">'
+                    + '<span class="btn-watch">Watch Project &#9654;</span>'
+                    + adminBtns
+                    + '</div>'
+                    + '</div>'
+                    + '</div>';
+            }).join('');
+        }
+
+        /* ── FILTERS ── */
+        function initFilters() {
+            document.getElementById('filter-row').addEventListener('click', e => {
+                const btn = e.target.closest('.filter-btn');
+                if (!btn) return;
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                state.activeCategory = btn.dataset.cat || 'All';
+                renderGrid();
+            });
+        }
+
+        /* ── VIDEO MODAL ── */
+        function openModal(id) {
+            const w = state.works.find(x => x.id === id);
+            if (!w) return;
+            document.getElementById('modal-title').textContent = w.title;
+            document.getElementById('modal-category').textContent = (w.category || '') + (w.year ? ' · ' + w.year : '');
+            
+            const container = document.getElementById('modal-video-container');
+            if (isDirectVideo(w.videoUrl)) {
+                const src = getDirectVideoSrc(w.videoUrl);
+                container.innerHTML = '<video src="' + esc(src) + '" controls autoplay style="width:100%;height:100%;background:#000;object-fit:contain;"></video>';
+            } else {
+                container.innerHTML = '<iframe src="' + esc(getEmbedUrl(w.videoUrl)) + '" title="' + esc(w.title) + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+            }
+
+            const toolsHtml = (w.tools || '').split(',').map(t => t.trim()).filter(Boolean).map(t => '<span class="sw-badge" style="font-size:.72rem;padding:.2rem .6rem;">' + esc(t) + '</span>').join('');
+
+            const detailsContainer = document.getElementById('modal-details-container');
+            detailsContainer.innerHTML = '<div>'
+                + '<div style="font-size:.7rem;font-weight:700;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:.5rem;">PROJECT DETAILS</div>'
+                + '<h3 style="font-family:\'Syne\',sans-serif;font-size:1.25rem;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:.75rem;">' + esc(w.title) + '</h3>'
+                + (toolsHtml ? '<div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem;">' + toolsHtml + '</div>' : '')
+                + '<p style="font-size:.85rem;color:var(--ghost);line-height:1.65;font-weight:300;">' + esc(w.desc || 'No description provided for this project.') + '</p>'
+                + '</div>'
+                + '<div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">'
+                + '<a href="https://wa.me/917736050347?text=Hi%20Junaid%2C%20I%20saw%20your%20project%20%22' + encodeURIComponent(w.title) + '%22" target="_blank" rel="noopener" class="btn-primary" style="padding:.5rem 1.25rem;font-size:.8rem;width:100%;justify-content:center;">Hire for Similar Project</a>'
+                + '</div>';
+
+            document.getElementById('video-modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('video-modal').classList.remove('open');
+            document.getElementById('modal-video-container').innerHTML = '';
+            document.body.style.overflow = '';
+        }
+        function initModal() {
+            document.getElementById('modal-close').addEventListener('click', closeModal);
+            document.getElementById('video-modal').addEventListener('click', e => { if (e.target === document.getElementById('video-modal')) closeModal(); });
+        }
+
+        /* ── ADMIN PIN AUTH ── */
+        let pinBuffer = '';
+        function openAuthModal() {
+            pinBuffer = ''; updatePinDots(); document.getElementById('auth-error').textContent = '';
+            document.getElementById('auth-modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeAuthModal() {
+            document.getElementById('auth-modal').classList.remove('open');
+            document.body.style.overflow = ''; pinBuffer = ''; updatePinDots();
+        }
+        function updatePinDots() {
+            for (let i = 0; i < 4; i++) {
+                const d = document.getElementById('pd-' + i);
+                d.classList.remove('filled', 'error');
+                if (i < pinBuffer.length) d.classList.add('filled');
+            }
+        }
+        function triggerPinError() {
+            for (let i = 0; i < 4; i++) document.getElementById('pd-' + i).classList.add('error');
+            document.getElementById('auth-error').textContent = 'Incorrect PIN. Try again.';
+            setTimeout(() => { pinBuffer = ''; updatePinDots(); document.getElementById('auth-error').textContent = ''; }, 1000);
+        }
+        function checkPin() {
+            if (pinBuffer === ADMIN_PIN) { closeAuthModal(); openAdminPanel(); }
+            else triggerPinError();
+        }
+        function initNumpad() {
+            document.querySelector('.numpad').addEventListener('click', e => {
+                const btn = e.target.closest('.num-btn'); if (!btn) return;
+                if (btn.dataset.action === 'clear') { pinBuffer = ''; updatePinDots(); return; }
+                if (btn.dataset.action === 'backspace') { pinBuffer = pinBuffer.slice(0, -1); updatePinDots(); return; }
+                if (btn.dataset.num !== undefined && pinBuffer.length < 4) {
+                    pinBuffer += btn.dataset.num; updatePinDots();
+                    if (pinBuffer.length === 4) setTimeout(checkPin, 120);
+                }
+            });
+            document.addEventListener('keydown', e => {
+                if (document.getElementById('auth-modal').classList.contains('open')) {
+                    if (e.key >= '0' && e.key <= '9' && pinBuffer.length < 4) { pinBuffer += e.key; updatePinDots(); if (pinBuffer.length === 4) setTimeout(checkPin, 120); }
+                    else if (e.key === 'Backspace') { pinBuffer = pinBuffer.slice(0, -1); updatePinDots(); }
+                    else if (e.key === 'Escape') closeAuthModal();
+                } else if (document.getElementById('video-modal').classList.contains('open') && e.key === 'Escape') { closeModal(); }
+                else if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'A') { e.preventDefault(); openAuthModal(); }
+            });
+        }
+
+        /* ── ADMIN PANEL ── */
+        function openAdminPanel() {
+            state.adminOpen = true;
+            document.getElementById('admin-panel').classList.add('open');
+            document.body.style.overflow = 'hidden';
+            renderAdminList(); renderGrid();
+        }
+        function closeAdminPanel() {
+            state.adminOpen = false;
+            document.getElementById('admin-panel').classList.remove('open');
+            document.body.style.overflow = ''; resetAdminForm(); renderGrid();
+        }
+        function renderAdminList() {
+            const list = document.getElementById('admin-work-list');
+            document.getElementById('admin-works-count').textContent = state.works.length;
+            if (!state.works.length) { list.innerHTML = '<div class="admin-empty">No portfolio works yet. Add one above!</div>'; return; }
+            list.innerHTML = state.works.map(w => {
+                const thumb = w.thumbUrl || getYtThumb(w.videoUrl || '') || '';
+                const toolsBadges = (w.tools || '').split(',').map(t => t.trim()).filter(Boolean).map(t => '<span class="admin-badge-pill">' + esc(t) + '</span>').join(' ');
+                
+                return '<div class="admin-work-item">'
+                    + '<div class="admin-work-thumb">'
+                    + (thumb ? '<img src="' + esc(thumb) + '" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" />' : '')
+                    + '<div class="card-thumb-placeholder" ' + (thumb ? 'style="display:none"' : '') + '>'
+                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="admin-work-info">'
+                    + '<div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">'
+                    + '<span class="admin-work-name">' + esc(w.title) + '</span>'
+                    + '<span class="admin-badge-pill" style="color:var(--accent);background:var(--iron);border-color:rgba(232,255,0,0.2);">' + esc(w.category || 'Video') + '</span>'
+                    + (w.year ? '<span class="admin-badge-pill">' + esc(w.year) + '</span>' : '')
+                    + '</div>'
+                    + (toolsBadges ? '<div style="display:flex;gap:.3rem;flex-wrap:wrap;margin:.15rem 0;">' + toolsBadges + '</div>' : '')
+                    + (w.desc ? '<div class="admin-work-desc">' + esc(w.desc) + '</div>' : '<div class="admin-work-desc" style="font-style:italic;">No description provided.</div>')
+                    + '<div style="font-size:.7rem;color:var(--mist);margin-top:.15rem;word-break:break-all;">📹 ' + esc(w.videoUrl) + '</div>'
+                    + '</div>'
+                    + '<div class="admin-work-actions"><button class="admin-action-btn" onclick="adminEditWork(\'' + esc(w.id) + '\')" aria-label="Edit">Edit</button><button class="admin-action-btn danger" onclick="deleteWork(\'' + esc(w.id) + '\')" aria-label="Delete">Delete</button></div>'
+                    + '</div>';
+            }).join('');
+        }
+
+        /* ── CRUD ── */
+        function initAdminForm() {
+            document.getElementById('admin-work-form').addEventListener('submit', async e => {
+                e.preventDefault();
+                const saveBtn = document.getElementById('form-submit-btn');
+                saveBtn.disabled = true;
+                saveBtn.textContent = '⌛ Finalizing & Capturing Frame...';
+
+                const editId = document.getElementById('edit-id').value.trim();
+                const title = document.getElementById('f-title').value.trim();
+                const category = document.getElementById('f-category').value;
+                const videoUrl = document.getElementById('f-video').value.trim();
+                let thumbUrl = document.getElementById('f-thumb').value.trim();
+                const year = document.getElementById('f-year').value.trim();
+                const tools = document.getElementById('f-tools').value.trim();
+                const desc = document.getElementById('f-desc').value.trim();
+
+                if (!title || !category || !videoUrl) {
+                    alert('Please fill in Title, Category, and Video File or URL.');
+                    saveBtn.disabled = false;
+                    saveBtn.textContent = '💾 Save & Finalize Video';
+                    return;
+                }
+
+                if (!thumbUrl) {
+                    thumbUrl = await extractVideoThumbnail(videoUrl);
+                }
+
+                const resolvedThumb = thumbUrl || getYtThumb(videoUrl) || '';
+
+                if (editId) {
+                    const idx = state.works.findIndex(w => w.id === editId);
+                    if (idx !== -1) state.works[idx] = { ...state.works[idx], title, category, videoUrl, thumbUrl: resolvedThumb, year, tools, desc };
+                } else {
+                    state.works.unshift({ id: 'w' + Date.now(), title, category, videoUrl, thumbUrl: resolvedThumb, year, tools, desc });
+                }
+
+                saveStorage(); renderGrid(); renderAdminList(); resetAdminForm();
+                saveBtn.disabled = false;
+                saveBtn.textContent = '💾 Save & Finalize Video';
+            });
+            document.getElementById('form-reset-btn').addEventListener('click', resetAdminForm);
+            document.getElementById('admin-panel-close').addEventListener('click', closeAdminPanel);
+        }
+        function resetAdminForm() {
+            document.getElementById('edit-id').value = '';
+            document.getElementById('admin-work-form').reset();
+            document.getElementById('f-year').value = new Date().getFullYear();
+            document.getElementById('form-mode-label').textContent = 'Add New Work';
+            document.getElementById('form-submit-btn').textContent = '💾 Save & Finalize Video';
+            document.getElementById('upload-status').textContent = '';
+        }
+        function adminEditWork(id) {
+            const w = state.works.find(x => x.id === id); if (!w) return;
+            document.getElementById('edit-id').value = w.id;
+            document.getElementById('f-title').value = w.title || '';
+            document.getElementById('f-category').value = w.category || '';
+            document.getElementById('f-video').value = w.videoUrl || '';
+            document.getElementById('f-thumb').value = w.thumbUrl || '';
+            document.getElementById('f-year').value = w.year || new Date().getFullYear();
+            document.getElementById('f-tools').value = w.tools || '';
+            document.getElementById('f-desc').value = w.desc || '';
+            document.getElementById('form-mode-label').textContent = 'Editing: ' + w.title;
+            document.getElementById('form-submit-btn').textContent = 'Update Work';
+            document.getElementById('admin-work-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        function deleteWork(id) {
+            const w = state.works.find(x => x.id === id); if (!w) return;
+            if (!confirm('Delete "' + w.title + '"? This cannot be undone.')) return;
+            state.works = state.works.filter(x => x.id !== id);
+            saveStorage(); renderGrid(); if (state.adminOpen) renderAdminList();
+        }
+
+        /* ── EMAIL COPY ── */
+        function copyEmail() {
+            const show = () => { const t = document.getElementById('copy-toast'); t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2500); };
+            navigator.clipboard.writeText(EMAIL_ADDRESS).then(show).catch(() => {
+                const ta = document.createElement('textarea');
+                ta.value = EMAIL_ADDRESS; ta.style.cssText = 'position:fixed;opacity:0;';
+                document.body.appendChild(ta); ta.focus(); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); show();
+            });
+        }
+
+        /* ── NAVBAR ── */
+        function initNavbar() {
+            const nb = document.getElementById('navbar');
+            window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+            nb.classList.toggle('scrolled', window.scrollY > 50);
+            const ham = document.getElementById('hamburger');
+            const nl = document.getElementById('nav-links');
+            ham.addEventListener('click', () => { ham.classList.toggle('open'); nl.classList.toggle('open'); });
+            nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); nl.classList.remove('open'); }));
+        }
+
+        /* ── SCROLL REVEAL ── */
+        function initReveal() {
+            const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        }
+
+        /* ── UPDATE WA LINKS ── */
+        function updateLinks() {
+            const msg = encodeURIComponent("Hi Junaid, I'm interested in working with you on a video project!");
+            const waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg;
+            ['nav-wa', 'hero-wa', 'contact-wa', 'fab-wa'].forEach(id => {
+                const el = document.getElementById(id); if (el) el.href = waUrl;
+            });
+            document.getElementById('email-display').textContent = EMAIL_ADDRESS;
+            const igEl = document.querySelector('.contact-link[href="https://instagram.com/"]');
+            if (igEl) igEl.href = INSTAGRAM_URL;
+        }
+
+        /* ── INIT ── */
+        document.addEventListener('DOMContentLoaded', () => {
+            state.works = loadStorage() || DEFAULT_WORKS;
+            if (!loadStorage()) saveStorage();
+
+            initTicker();
+            initNavbar();
+            initFilters();
+            renderGrid();
+            initModal();
+            initReveal();
+            updateLinks();
+        });
+    </script>
+</body>
+
+</html>

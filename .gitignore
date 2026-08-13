@@ -1,0 +1,13 @@
+# Large archives and media uploads
+airo_portfolio_transfer.zip
+*.zip
+uploads/*.mp4
+
+# Python / Jupyter temporary files
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# System / OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Portal — Junaid Portfolio Management</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #141414;
+            --iron: #222222;
+            --steel: #333333;
+            --mist: #888888;
+            --ghost: #cccccc;
+            --white: #ffffff;
+            --accent: #e8ff00;
+            --accent-dim: rgba(232, 255, 0, 0.1);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-light: rgba(255, 255, 255, 0.15);
+            --radius: 12px;
+            --radius-lg: 18px;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── LOGIN CONTAINER ── */
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: radial-gradient(circle at center, rgba(232, 255, 0, 0.03) 0%, rgba(10, 10, 10, 1) 70%);
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            background: var(--charcoal);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .login-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.02em;
+        }
+
+        .login-subtitle {
+            font-size: 0.85rem;
+            color: var(--mist);
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--ghost);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            background: var(--iron);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 0.75rem 1rem;
+            color: var(--white);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(232, 255, 0, 0.12);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--accent);
+            color: var(--black);
+            border: none;
+            border-radius: var(--radius);
+            padding: 0.85rem 1.5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 255, 0, 0.25);
+        }
+
+        .login-error {
+            color: #ef4444;
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
+            text-align: center;
+            display: none;
+        }
+
+        /* ── DASHBOARD LAYOUT ── */
+        .dashboard {
+            display: none;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem;
+        }
+
+        .dash-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .dash-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .dash-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--ghost);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 0.55rem 1.25rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--iron);
+            color: var(--white);
+        }
+
+        .dash-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 990px) {
+            .dash-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .dashboard {
+                padding: 1rem 0.85rem 4rem;
+            }
+            .dash-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .dash-title {
+                font-size: 1.45rem;
+            }
+            .dash-actions {
+                width: 100%;
+                display: flex;
+                gap: 0.5rem;
+            }
+            .dash-actions .btn-secondary {
+                flex: 1;
+                justify-content: center;
+                font-size: 0.75rem;
+                padding: 0.5rem 0.6rem;
+            }
+            .card-panel {
+                padding: 1.25rem 1rem;
+            }
+            .work-item {
+                flex-direction: column;
+            }
+            .work-thumb {
+                width: 100%;
+                height: 180px;
+            }
+            .modal-box {
+                padding: 1.25rem 1rem;
+                max-width: 98%;
+            }
+        }
+
+        .card-panel {
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+        }
+
+        .panel-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+
+        /* ── WORK ITEM CARD ── */
+        .work-item {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.1rem;
+            background: var(--iron);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .work-item:hover {
+            border-color: var(--border-light);
+        }
+
+        .work-thumb {
+            width: 130px;
+            height: 85px;
+            border-radius: 8px;
+            background: var(--black);
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .work-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .work-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .work-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .badge-pill {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--ghost);
+            padding: 0.1rem 0.5rem;
+            border-radius: 99px;
+            font-size: 0.68rem;
+            font-weight: 600;
+        }
+
+        .work-desc {
+            font-size: 0.78rem;
+            color: var(--mist);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .work-actions {
+            display: flex;
+            gap: 0.4rem;
+            margin-top: 0.4rem;
+        }
+
+        .action-btn {
+            padding: 0.28rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: var(--steel);
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .action-btn.danger {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .action-btn.danger:hover {
+            background: #dc2626;
+            color: #fff;
+        }
+
+        /* ── MODAL ── */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .modal-backdrop.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-box {
+            width: 100%;
+            max-width: 680px;
+            background: var(--charcoal);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ════════════════════ LOGIN SCREEN ════════════════════ -->
+    <div class="login-wrapper" id="login-wrapper">
+        <div class="login-card">
+            <div class="login-title">Admin Portal</div>
+            <div class="login-subtitle">Enter your Admin Password to manage Junaid's portfolio.</div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label" for="login-pass">Admin Password</label>
+                    <input type="password" id="login-pass" class="form-input" placeholder="Enter password..." required autofocus />
+                </div>
+                <button type="submit" class="btn-submit">Login to Dashboard</button>
+                <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ════════════════════ ADMIN DASHBOARD ════════════════════ -->
+    <div class="dashboard" id="dashboard">
+        <header class="dash-header">
+            <div>
+                <div class="dash-title">Junaid's Portfolio CMS</div>
+                <div style="font-size:.8rem;color:var(--mist);margin-top:.2rem;">Manage project videos, details, and video frame thumbnails</div>
+            </div>
+            <div class="dash-actions">
+                <a href="http://localhost:8080/" target="_blank" class="btn-secondary">🌐 View Live Portfolio</a>
+                <button onclick="logout()" class="btn-secondary" style="color:#fca5a5;border-color:rgba(239,68,68,0.3);">Logout</button>
+            </div>
+        </header>
+
+        <div class="dash-grid">
+            <!-- FORM PANEL -->
+            <div class="card-panel">
+                <div class="panel-title" id="form-mode-title">Add New Project</div>
+                <form id="work-form">
+                    <input type="hidden" id="edit-id" value="" />
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="f-title">Project Title *</label>
+                        <input type="text" id="f-title" class="form-input" placeholder="e.g. Real Estate Commercial Edit" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="f-category">Category *</label>
+                        <select id="f-category" class="form-select" required>
+                            <option value="">— Select Category —</option>
+                            <option value="Color Grading">Color Grading</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Event Teaser">Event Teaser</option>
+                            <option value="Motion Graphics">Motion Graphics</option>
+                            <option value="Reels">Reels</option>
+                            <option value="Videography">Videography</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="f-video">Video File or URL *</label>
+                        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+                            <input type="text" id="f-video" class="form-input" style="flex:1;min-width:180px;" placeholder="Paste YouTube link or local MP4 path" required />
+                            <label for="f-file-input" style="padding:.7rem 1rem;background:var(--steel);color:var(--white);border-radius:var(--radius);cursor:pointer;font-size:.8rem;font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;gap:.3rem;">
+                                📁 File...
+                            </label>
+                            <input type="file" id="f-file-input" accept="video/*" style="display:none;" onchange="uploadVideoFile(this)" />
+                        </div>
+                        <span id="upload-status" style="font-size:.75rem;color:var(--mist);margin-top:.25rem;display:block;"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="f-thumb">Thumbnail Frame</label>
+                        <div style="display:flex;gap:.5rem;">
+                            <input type="text" id="f-thumb" class="form-input" style="flex:1;" placeholder="Auto-captured on save if empty" />
+                            <button type="button" onclick="openFramePickerModal()" style="padding:.7rem .9rem;background:var(--accent);color:var(--black);border:none;border-radius:var(--radius);font-weight:700;font-size:.8rem;cursor:pointer;white-space:nowrap;">
+                                🎬 Pick Frame
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="f-year">Year</label>
+                        <input type="number" id="f-year" class="form-input" value="2026" min="2000" max="2099" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="f-tools">Tools Used</label>
+                        <input type="text" id="f-tools" class="form-input" placeholder="e.g. Premiere Pro, After Effects" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="f-desc">Description</label>
+                        <textarea id="f-desc" class="form-textarea" rows="3" placeholder="Brief details about the video project..."></textarea>
+                    </div>
+
+                    <div style="display:flex;gap:.75rem;margin-top:1.5rem;">
+                        <button type="button" onclick="resetForm()" class="btn-secondary" style="flex:1;">Reset</button>
+                        <button type="submit" id="form-submit-btn" class="btn-submit" style="flex:2;">💾 Save Project</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- LIST PANEL -->
+            <div class="card-panel">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
+                    <div class="panel-title" style="margin:0;">Portfolio Works List</div>
+                    <span style="font-size:.78rem;color:var(--accent);background:rgba(232,255,0,0.1);padding:.2rem .6rem;border-radius:99px;font-weight:700;" id="works-count">0 Items</span>
+                </div>
+                <div id="works-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════ FRAME PICKER MODAL ════════════════════ -->
+    <div class="modal-backdrop" id="frame-picker-modal">
+        <div class="modal-box">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;">Select Thumbnail Frame</div>
+                <button onclick="closeFramePickerModal()" style="background:none;border:none;color:var(--white);font-size:1.2rem;cursor:pointer;">&#x2715;</button>
+            </div>
+            <div style="width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--radius);overflow:hidden;margin-bottom:1rem;">
+                <video id="picker-video" style="width:100%;height:100%;object-fit:contain;" controls></video>
+                <canvas id="picker-canvas" style="display:none;"></canvas>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem;">
+                <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--mist);">
+                    <span>Scrub Timeline:</span>
+                    <span id="picker-time" style="color:var(--accent);font-family:monospace;">0:00 / 0:00</span>
+                </div>
+                <input type="range" id="picker-slider" min="0" max="100" value="0" step="0.1" style="width:100%;accent-color:var(--accent);" oninput="scrubPicker(this.value)" />
+            </div>
+            <div style="display:flex;justify-content:flex-end;gap:.75rem;">
+                <button type="button" onclick="closeFramePickerModal()" class="btn-secondary">Cancel</button>
+                <button type="button" onclick="captureFrame()" class="btn-submit" style="width:auto;padding:.6rem 1.25rem;">🎯 Capture Frame</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════ JAVASCRIPT ════════════════════ -->
+    <script>
+        'use strict';
+        const ADMIN_PASS = '1234';
+        const LS_KEY = 'junaid_portfolio_v3';
+
+        let works = [];
+        let pickerVideo = null;
+
+        /* ── AUTH ── */
+        function checkAuth() {
+            if (sessionStorage.getItem('admin_auth') === 'true') {
+                document.getElementById('login-wrapper').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                loadWorks();
+            }
+        }
+
+        document.getElementById('login-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const pass = document.getElementById('login-pass').value.trim();
+            if (pass === ADMIN_PASS || pass === 'admin' || pass === 'junaid') {
+                sessionStorage.setItem('admin_auth', 'true');
+                checkAuth();
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        });
+
+        function logout() {
+            sessionStorage.removeItem('admin_auth');
+            location.reload();
+        }
+
+        /* ── STORAGE & API ── */
+        async function loadWorks() {
+            try {
+                const res = await fetch('/api/works');
+                if (res.ok) {
+                    works = await res.json();
+                } else {
+                    throw new Error();
+                }
+            } catch (e) {
+                const local = localStorage.getItem(LS_KEY);
+                works = local ? JSON.parse(local) : [];
+            }
+            renderList();
+        }
+
+        function saveStorage() {
+            try { localStorage.setItem(LS_KEY, JSON.stringify(works)); } catch (e) {}
+        }
+
+        /* ── HELPERS ── */
+        function getYtId(url) {
+            if (!url) return null;
+            const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([^&?\s]+)/);
+            return m ? m[1] : null;
+        }
+        function getYtThumb(url) {
+            const id = getYtId(url);
+            return id ? 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg' : null;
+        }
+        function getDirectVideoSrc(url) {
+            if (!url) return '';
+            let s = url.trim();
+            if (/^[a-zA-Z]:\\/.test(s)) s = 'file:///' + s.replace(/\\/g, '/');
+            return s;
+        }
+        function esc(s) {
+            return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        /* ── RENDER LIST (Left = Thumbnail, Right = Data) ── */
+        function renderList() {
+            const container = document.getElementById('works-list');
+            document.getElementById('works-count').textContent = works.length + ' Items';
+            if (!works.length) {
+                container.innerHTML = '<div style="text-align:center;padding:3rem;color:var(--mist);">No portfolio items found. Add one on the left!</div>';
+                return;
+            }
+
+            container.innerHTML = works.map(w => {
+                const thumb = w.thumbUrl || getYtThumb(w.videoUrl) || '';
+                const toolsBadges = (w.tools || '').split(',').map(t => '<span class="badge-pill">' + esc(t.trim()) + '</span>').join(' ');
+                
+                return '<div class="work-item">'
+                    + '<div class="work-thumb">'
+                    + (thumb ? '<img src="' + esc(thumb) + '" alt="" />' : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--mist);">&#127916;</div>')
+                    + '</div>'
+                    + '<div class="work-info">'
+                    + '<div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">'
+                    + '<span class="work-name">' + esc(w.title) + '</span>'
+                    + '<span class="badge-pill" style="color:var(--accent);background:rgba(232,255,0,0.1);">' + esc(w.category || 'Video') + '</span>'
+                    + (w.year ? '<span class="badge-pill">' + esc(w.year) + '</span>' : '')
+                    + '</div>'
+                    + (toolsBadges ? '<div style="display:flex;gap:.3rem;margin:.2rem 0;">' + toolsBadges + '</div>' : '')
+                    + '<div class="work-desc">' + esc(w.desc || 'No description.') + '</div>'
+                    + '<div class="work-actions">'
+                    + '<button class="action-btn" onclick="editWork(\'' + esc(w.id) + '\')">Edit</button>'
+                    + '<button class="action-btn danger" onclick="deleteWork(\'' + esc(w.id) + '\')">Delete</button>'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>';
+            }).join('');
+        }
+
+        /* ── UPLOAD FILE ── */
+        function uploadVideoFile(input) {
+            const file = input.files && input.files[0];
+            if (!file) return;
+            const status = document.getElementById('upload-status');
+            status.textContent = 'Uploading ' + file.name + '...';
+            status.style.color = 'var(--accent)';
+
+            fetch('/api/upload', {
+                method: 'POST',
+                headers: { 'X-Filename': file.name, 'Content-Type': file.type || 'application/octet-stream' },
+                body: file
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.url) {
+                    document.getElementById('f-video').value = data.url;
+                    status.textContent = '✓ Saved to uploads/' + data.filename;
+                    status.style.color = '#22c55e';
+                }
+            })
+            .catch(() => {
+                document.getElementById('f-video').value = URL.createObjectURL(file);
+                status.textContent = '✓ Loaded file: ' + file.name;
+                status.style.color = '#22c55e';
+            });
+        }
+
+        /* ── FRAME PICKER MODAL ── */
+        function openFramePickerModal() {
+            const videoUrl = document.getElementById('f-video').value.trim();
+            if (!videoUrl) { alert('Please choose or paste a Video File or URL first.'); return; }
+            pickerVideo = document.getElementById('picker-video');
+            pickerVideo.src = getDirectVideoSrc(videoUrl);
+
+            pickerVideo.onloadedmetadata = () => {
+                const slider = document.getElementById('picker-slider');
+                slider.min = 0;
+                slider.max = pickerVideo.duration || 100;
+                slider.value = Math.min(1.0, pickerVideo.duration / 2);
+                pickerVideo.currentTime = slider.value;
+                updateTimeDisplay();
+            };
+
+            pickerVideo.ontimeupdate = () => {
+                document.getElementById('picker-slider').value = pickerVideo.currentTime;
+                updateTimeDisplay();
+            };
+
+            document.getElementById('frame-picker-modal').classList.add('open');
+        }
+
+        function closeFramePickerModal() {
+            if (pickerVideo) { pickerVideo.pause(); pickerVideo.removeAttribute('src'); }
+            document.getElementById('frame-picker-modal').classList.remove('open');
+        }
+
+        function scrubPicker(val) {
+            if (pickerVideo) { pickerVideo.currentTime = parseFloat(val); updateTimeDisplay(); }
+        }
+
+        function updateTimeDisplay() {
+            if (!pickerVideo) return;
+            const fmt = s => Math.floor(s/60) + ':' + (Math.floor(s%60)<10?'0':'') + Math.floor(s%60);
+            document.getElementById('picker-time').textContent = fmt(pickerVideo.currentTime) + ' / ' + fmt(pickerVideo.duration || 0);
+        }
+
+        function captureFrame() {
+            if (!pickerVideo) return;
+            try {
+                const canvas = document.getElementById('picker-canvas');
+                canvas.width = pickerVideo.videoWidth || 640;
+                canvas.height = pickerVideo.videoHeight || 360;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(pickerVideo, 0, 0, canvas.width, canvas.height);
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
+                document.getElementById('f-thumb').value = dataUrl;
+                closeFramePickerModal();
+            } catch (e) {
+                alert('Could not capture frame from this source.');
+            }
+        }
+
+        /* ── FORM CRUD ── */
+        document.getElementById('work-form').addEventListener('submit', async e => {
+            e.preventDefault();
+            const editId = document.getElementById('edit-id').value.trim();
+            const title = document.getElementById('f-title').value.trim();
+            const category = document.getElementById('f-category').value;
+            const videoUrl = document.getElementById('f-video').value.trim();
+            let thumbUrl = document.getElementById('f-thumb').value.trim();
+            const year = document.getElementById('f-year').value.trim();
+            const tools = document.getElementById('f-tools').value.trim();
+            const desc = document.getElementById('f-desc').value.trim();
+
+            const payload = { title, category, videoUrl, thumbUrl: thumbUrl || getYtThumb(videoUrl) || '', year, tools, desc };
+
+            if (editId) {
+                payload.id = editId;
+                const idx = works.findIndex(w => w.id === editId);
+                if (idx !== -1) works[idx] = payload;
+            } else {
+                payload.id = 'w' + Date.now();
+                works.unshift(payload);
+            }
+
+            try {
+                if (editId) {
+                    await fetch('/api/works', { method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' } });
+                } else {
+                    await fetch('/api/works', { method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' } });
+                }
+            } catch (e) {}
+
+            saveStorage();
+            renderList();
+            resetForm();
+        });
+
+        function resetForm() {
+            document.getElementById('edit-id').value = '';
+            document.getElementById('work-form').reset();
+            document.getElementById('f-year').value = new Date().getFullYear();
+            document.getElementById('form-mode-title').textContent = 'Add New Project';
+            document.getElementById('form-submit-btn').textContent = '💾 Save Project';
+            document.getElementById('upload-status').textContent = '';
+        }
+
+        function editWork(id) {
+            const w = works.find(x => x.id === id); if (!w) return;
+            document.getElementById('edit-id').value = w.id;
+            document.getElementById('f-title').value = w.title || '';
+            document.getElementById('f-category').value = w.category || '';
+            document.getElementById('f-video').value = w.videoUrl || '';
+            document.getElementById('f-thumb').value = w.thumbUrl || '';
+            document.getElementById('f-year').value = w.year || new Date().getFullYear();
+            document.getElementById('f-tools').value = w.tools || '';
+            document.getElementById('f-desc').value = w.desc || '';
+            document.getElementById('form-mode-title').textContent = 'Editing: ' + w.title;
+            document.getElementById('form-submit-btn').textContent = 'Update Project';
+        }
+
+        async function deleteWork(id) {
+            const w = works.find(x => x.id === id); if (!w) return;
+            if (!confirm('Delete "' + w.title + '"?')) return;
+            works = works.filter(x => x.id !== id);
+            try { await fetch('/api/works/' + id, { method: 'DELETE' }); } catch (e) {}
+            saveStorage();
+            renderList();
+        }
+
+        checkAuth();
+    </script>
+</body>
+
+</html>
