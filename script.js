@@ -7,9 +7,13 @@
    - Mobile Navigation Toggle
    ============================================================ */
 
-const API_ENDPOINT = window.location.origin.includes('8080') 
-  ? '/api/works' 
-  : 'http://localhost:8080/api/works';
+const isLocalEnv = window.location.hostname === 'localhost' || 
+                   window.location.hostname === '127.0.0.1' || 
+                   window.location.port === '8080';
+
+const API_ENDPOINT = isLocalEnv 
+  ? (window.location.port === '8080' ? '/api/works' : 'http://localhost:8080/api/works')
+  : null;
 
 const LOCAL_STORAGE_KEY = 'junaid_portfolio_works_v1';
 
@@ -83,15 +87,17 @@ function getEmbedUrl(url) {
 async function loadWorks() {
   let loaded = false;
 
-  try {
-    const res = await fetch(API_ENDPOINT);
-    if (res.ok) {
-      allWorks = await res.json();
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(allWorks));
-      loaded = true;
+  if (API_ENDPOINT) {
+    try {
+      const res = await fetch(API_ENDPOINT);
+      if (res.ok) {
+        allWorks = await res.json();
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(allWorks));
+        loaded = true;
+      }
+    } catch (err) {
+      console.warn("API server not reachable, attempting localStorage backup...", err);
     }
-  } catch (err) {
-    console.warn("API server not reachable, attempting localStorage backup...", err);
   }
 
   if (!loaded) {
@@ -262,14 +268,16 @@ function setupFormListener() {
     form.reset();
 
     // 2. Sync with Python API backend if accessible
-    try {
-      await fetch(API_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newWork)
-      });
-    } catch (err) {
-      console.log("Posted to local state & localStorage backup. Backend API notice:", err);
+    if (API_ENDPOINT) {
+      try {
+        await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newWork)
+        });
+      } catch (err) {
+        console.log("Posted to local state & localStorage backup. Backend API notice:", err);
+      }
     }
 
     alert(`✨ "${newWork.title}" published successfully to portfolio!`);
@@ -286,10 +294,12 @@ async function deleteWork(id) {
   renderGrid();
 
   // 2. Sync delete with API backend if accessible
-  try {
-    await fetch(`${API_ENDPOINT}/${id}`, { method: 'DELETE' });
-  } catch (err) {
-    console.log("Deleted from local state & localStorage backup. API notice:", err);
+  if (API_ENDPOINT) {
+    try {
+      await fetch(`${API_ENDPOINT}/${id}`, { method: 'DELETE' });
+    } catch (err) {
+      console.log("Deleted from local state & localStorage backup. API notice:", err);
+    }
   }
 }
 
