@@ -132,6 +132,6 @@ class APIHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__))
-    print(f"Antigravity Agent server running on http://localhost:{PORT}")
-    httpd = HTTPServer(("0.0.0.0", PORT), APIHandler)
+    print(f"Antigravity Agent server running on http://127.0.0.1:{PORT}")
+    httpd = HTTPServer(("127.0.0.1", PORT), APIHandler)
     httpd.serve_forever()

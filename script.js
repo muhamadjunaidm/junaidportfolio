@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   loadWorks();
   setupFormListener();
+  initCharacterCinematicTilt();
 });
 
 /* ── Check URL query param for ?admin=1 ── */
@@ -296,4 +297,55 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
+}
+
+/* ── Interactive 3D Character Card Tilt & Parallax Controller ── */
+function initCharacterCinematicTilt() {
+  const card = document.getElementById('hero-portrait-card');
+  const imgWrap = document.getElementById('hero-portrait-img');
+  if (!card) return;
+
+  let bounds;
+
+  function updateBounds() {
+    bounds = card.getBoundingClientRect();
+  }
+
+  card.addEventListener('mouseenter', () => {
+    updateBounds();
+    card.style.transition = 'transform 0.15s cubic-bezier(0.16, 1, 0.3, 1)';
+    if (imgWrap) imgWrap.style.transition = 'transform 0.15s cubic-bezier(0.16, 1, 0.3, 1)';
+  });
+
+  card.addEventListener('mousemove', (e) => {
+    if (!bounds) updateBounds();
+    const mouseX = e.clientX - bounds.left;
+    const mouseY = e.clientY - bounds.top;
+    const xPct = (mouseX / bounds.width) - 0.5;
+    const yPct = (mouseY / bounds.height) - 0.5;
+
+    // 3D Card tilt degrees
+    const rotateX = -yPct * 18;
+    const rotateY = xPct * 18;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+
+    // Opposite subtle depth shift for inner portrait image
+    if (imgWrap) {
+      const imgShiftX = -xPct * 12;
+      const imgShiftY = -yPct * 12;
+      imgWrap.style.transform = `scale(1.06) translate(${imgShiftX}px, ${imgShiftY}px)`;
+    }
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    card.style.transform = 'rotateX(0deg) rotateY(0deg) translateY(0px)';
+    if (imgWrap) {
+      imgWrap.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      imgWrap.style.transform = 'scale(1) translate(0px, 0px)';
+    }
+  });
+
+  window.addEventListener('resize', updateBounds);
 }

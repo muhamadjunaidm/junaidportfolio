@@ -455,7 +455,61 @@
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
-        /* ── CHARACTER PORTRAIT SIDE CARD ── */
+        /* ── CHARACTER PORTRAIT SIDE CARD & CINEMATIC STROKE HIGHLIGHT ── */
+        @property --border-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @keyframes rotateBorderAngle {
+            0% { --border-angle: 0deg; }
+            100% { --border-angle: 360deg; }
+        }
+
+        @keyframes kenBurnsZoom {
+            0% {
+                transform: scale(1.0) translateY(0);
+                filter: contrast(103%) brightness(97%);
+            }
+            50% {
+                transform: scale(1.05) translateY(-1.5%);
+                filter: contrast(106%) brightness(103%);
+            }
+            100% {
+                transform: scale(1.08) translateY(-3%);
+                filter: contrast(108%) brightness(100%);
+            }
+        }
+
+        @keyframes specularSweepPass {
+            0% {
+                transform: translateX(-120%) rotate(25deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.9;
+            }
+            45% {
+                transform: translateX(120%) rotate(25deg);
+                opacity: 0.9;
+            }
+            60%, 100% {
+                transform: translateX(120%) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulseGlowRing {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        @keyframes strokeLaserTravel {
+            0% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -400; }
+        }
+
         .hero-portrait-side {
             position: relative;
             display: flex;
@@ -463,41 +517,92 @@
             align-items: center;
             width: 100%;
             z-index: 2;
+            perspective: 1200px;
         }
 
-        /* Soft dark radial gradient vignette directly behind portrait card */
+        /* Ambient dramatic radial glow directly behind portrait card */
         .hero-portrait-side::before {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 155%;
-            height: 155%;
-            background: radial-gradient(circle at center, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.7) 48%, rgba(10, 10, 10, 0) 80%);
+            width: 165%;
+            height: 165%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0%, rgba(20, 20, 25, 0.85) 45%, rgba(10, 10, 10, 0) 80%);
             pointer-events: none;
             z-index: -1;
             border-radius: 50%;
-            filter: blur(30px);
+            filter: blur(40px);
+            animation: pulseGlowRing 8s ease-in-out infinite;
         }
 
         .hero-portrait-card {
             position: relative;
             width: 100%;
             max-width: 380px;
-            background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-            border: 1px solid var(--border-light);
+            background: rgba(18, 18, 22, 0.85);
             border-radius: 24px;
             padding: 1rem 1rem 1.25rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(16px);
-            transition: var(--transition);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transform-style: preserve-3d;
+            transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            overflow: visible;
+        }
+
+        /* Animated White Stroke Movement Edge Highlight around the Box */
+        .hero-portrait-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 26px;
+            padding: 2px;
+            background: conic-gradient(
+                from var(--border-angle),
+                rgba(255, 255, 255, 0.05) 0%,
+                rgba(255, 255, 255, 0.2) 65%,
+                rgba(255, 255, 255, 0.85) 85%,
+                #ffffff 93%,
+                rgba(255, 255, 255, 0.85) 97%,
+                rgba(255, 255, 255, 0.05) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            animation: rotateBorderAngle 4.5s linear infinite;
+            z-index: 10;
+        }
+
+        /* Secondary glowing white border aura trailing the stroke highlight */
+        .hero-portrait-card::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 28px;
+            padding: 3px;
+            background: conic-gradient(
+                from var(--border-angle),
+                transparent 0%,
+                transparent 70%,
+                rgba(255, 255, 255, 0.3) 85%,
+                #ffffff 94%,
+                transparent 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            animation: rotateBorderAngle 4.5s linear infinite;
+            filter: blur(10px);
+            opacity: 0.9;
+            z-index: 9;
         }
 
         .hero-portrait-card:hover {
-            border-color: rgba(255, 255, 255, 0.28);
-            transform: translateY(-4px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.85), 0 0 50px rgba(255, 255, 255, 0.15);
         }
 
         .portrait-image-wrap {
@@ -506,7 +611,9 @@
             aspect-ratio: 4/5;
             border-radius: 16px;
             overflow: hidden;
-            background: var(--charcoal);
+            background: #0c0c0e;
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.9);
+            transform-style: preserve-3d;
         }
 
         .portrait-image-wrap img {
@@ -515,7 +622,69 @@
             object-fit: cover;
             object-position: center top;
             display: block;
-            filter: grayscale(10%);
+            filter: contrast(105%) brightness(98%);
+            animation: kenBurnsZoom 12s ease-in-out infinite alternate;
+            will-change: transform;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Cinematic Specular Light Sweep Pass across Character */
+        .portrait-light-sweep {
+            position: absolute;
+            top: -60%;
+            left: -70%;
+            width: 240%;
+            height: 220%;
+            background: linear-gradient(
+                115deg,
+                transparent 35%,
+                rgba(255, 255, 255, 0.04) 43%,
+                rgba(255, 255, 255, 0.28) 50%,
+                rgba(255, 255, 255, 0.04) 57%,
+                transparent 65%
+            );
+            pointer-events: none;
+            transform: rotate(25deg);
+            animation: specularSweepPass 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            z-index: 4;
+        }
+
+        /* Fine dark vignette rim framing overlay */
+        .portrait-vignette-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.5) 100%);
+            pointer-events: none;
+            z-index: 3;
+            border-radius: 16px;
+        }
+
+        /* Precision SVG White Laser Stroke Overlay around the Card */
+        .portrait-card-stroke-svg {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            pointer-events: none;
+            z-index: 11;
+            overflow: visible;
+            border-radius: 24px;
+        }
+
+        .stroke-path-glow {
+            stroke: rgba(255, 255, 255, 0.85);
+            stroke-width: 2.5px;
+            stroke-dasharray: 80 320;
+            animation: strokeLaserTravel 4.5s linear infinite;
+            filter: drop-shadow(0 0 8px #ffffff);
+        }
+
+        .stroke-path-core {
+            stroke: #ffffff;
+            stroke-width: 1.5px;
+            stroke-dasharray: 60 340;
+            animation: strokeLaserTravel 4.5s linear infinite;
         }
 
         .portrait-card-badge {
@@ -524,15 +693,23 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            background: var(--white);
-            color: var(--black);
+            background: #ffffff;
+            color: #000000;
             font-size: 0.72rem;
             font-weight: 800;
             letter-spacing: 0.12em;
             padding: 0.55rem 1.2rem;
             border-radius: 99px;
             text-transform: uppercase;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25), 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portrait-card-badge:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
         }
 
         /* ── BOTTOM BAR ── */
@@ -2781,12 +2958,21 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: Character Portrait Side Card -->
-            <div class="hero-portrait-side reveal reveal-delay-2">
-                <div class="hero-portrait-card">
-                    <div class="portrait-image-wrap">
+            <!-- RIGHT COLUMN: Character Portrait Side Card with Cinematic Animation & Edge Highlight -->
+            <div class="hero-portrait-side reveal reveal-delay-2" id="hero-portrait-side">
+                <div class="hero-portrait-card" id="hero-portrait-card">
+                    <!-- SVG Precision White Stroke Movement Highlight Path -->
+                    <svg class="portrait-card-stroke-svg" viewBox="0 0 380 480" preserveAspectRatio="none" aria-hidden="true">
+                        <rect class="stroke-path-glow" x="1.5" y="1.5" width="377" height="477" rx="23" fill="none" />
+                        <rect class="stroke-path-core" x="1.5" y="1.5" width="377" height="477" rx="23" fill="none" />
+                    </svg>
+
+                    <div class="portrait-image-wrap" id="portrait-image-wrap">
                         <img src="hero_portrait.png" alt="Junaid - Video Editor and Videographer, Malappuram Kerala"
+                            id="hero-portrait-img"
                             onerror="this.style.display='none';document.getElementById('portrait-fallback-side').style.display='flex';" />
+                        <div class="portrait-light-sweep" aria-hidden="true"></div>
+                        <div class="portrait-vignette-overlay" aria-hidden="true"></div>
                         <div id="portrait-fallback-side"
                             style="display:none;align-items:center;justify-content:center;font-size:4rem;height:100%;background:var(--charcoal);">🎬</div>
                     </div>
