@@ -390,7 +390,7 @@
         .hero-stage {
             position: relative;
             width: 100%;
-            margin: 1.5rem 0 2.5rem;
+            margin: 1.5rem 0 3.5rem;
             text-align: center;
         }
 
@@ -431,11 +431,11 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -46%);
+            transform: translate(-50%, -50%);
             z-index: 2;
             /* above solid text, below stroke text */
             pointer-events: none;
-            width: clamp(200px, 24vw, 340px);
+            width: clamp(140px, 16vw, 240px);
         }
 
         .hero-portrait-abs img {
@@ -451,7 +451,7 @@
         /* Badge attached to bottom of portrait */
         .portrait-badge {
             position: absolute;
-            bottom: -0.75rem;
+            bottom: -0.5rem;
             left: 50%;
             transform: translateX(-50%);
             background: var(--white);
@@ -1976,7 +1976,7 @@
                 min-height: auto;
             }
             .hero-portrait-abs {
-                width: clamp(160px, 30vw, 250px);
+                width: clamp(120px, 20vw, 190px);
             }
             .hero-bottom-row {
                 justify-content: center;
@@ -2221,7 +2221,7 @@
                 font-size: clamp(1.8rem, 8vw, 3rem);
             }
             .hero-portrait-abs {
-                width: clamp(130px, 36vw, 190px);
+                width: clamp(100px, 22vw, 150px);
             }
             .hero-bottom-row {
                 margin-top: 1.5rem;
@@ -2690,15 +2690,6 @@
 
             <!-- BOTTOM BAR -->
             <div class="hero-bottom-row">
-                <!-- Location -->
-                <div class="location-pill reveal reveal-delay-2" style="font-size:.82rem;">
-                    <svg viewBox="0 0 24 24" style="width:11px;height:11px;fill:#ef4444;flex-shrink:0;">
-                        <path
-                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                    Based in Malappuram, Kerala, India
-                </div>
-
                 <!-- Software Badges -->
                 <div class="hero-software reveal reveal-delay-2">
                     <div class="sw-badge"><span class="sw-icon ae">Ae</span>After Effects</div>
