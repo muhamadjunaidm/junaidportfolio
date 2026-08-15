@@ -297,46 +297,7 @@
             transform: rotate(-45deg) translate(5px, -4px);
         }
 
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
 
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 72px;
-                left: 0;
-                right: 0;
-                background: rgba(10, 10, 10, 0.98);
-                backdrop-filter: blur(24px);
-                flex-direction: column;
-                gap: 0;
-                padding: 1rem 0 2rem;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem 2rem;
-                font-size: 1rem;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-links a:hover::after {
-                display: none;
-            }
-
-            .nav-cta {
-                margin: 1rem 2rem 0;
-                display: inline-block;
-                text-align: center;
-            }
-        }
 
         /* ─── HERO ──────────────────────────────────────────────── */
         .hero {
@@ -667,32 +628,7 @@
             color: #fff;
         }
 
-        @media (max-width: 900px) {
-            .hero-portrait-abs {
-                width: clamp(160px, 36vw, 260px);
-                bottom: 3.5rem;
-            }
 
-            .hero-bottom-row {
-                justify-content: center;
-            }
-
-            .hero-title-solid,
-            .hero-title-stroke {
-                white-space: normal;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding: 0 1.25rem 3rem;
-            }
-
-            .hero-portrait-abs {
-                width: clamp(140px, 40vw, 220px);
-                bottom: 3rem;
-            }
-        }
 
         /* ─── TICKER ─────────────────────────────────────────────── */
         .ticker {
@@ -796,25 +732,7 @@
             margin-bottom: 3rem;
         }
 
-        @media (max-width: 768px) {
-            .filter-row {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 0.6rem;
-                margin-bottom: 2rem;
-                scrollbar-width: none;
-            }
-            .filter-row::-webkit-scrollbar {
-                display: none;
-            }
-            .filter-btn {
-                flex-shrink: 0;
-                white-space: nowrap;
-                padding: 0.55rem 1.1rem;
-                font-size: 0.8rem;
-            }
-        }
+
 
         .filter-btn {
             padding: 0.5rem 1.25rem;
@@ -1024,15 +942,7 @@
             gap: 0.35rem;
         }
 
-        @media (max-width: 768px) {
-            .work-card {
-                flex-direction: column;
-            }
-            .card-thumb-box {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
+
 
         .card-admin-actions {
             position: absolute;
@@ -1160,15 +1070,7 @@
             justify-content: space-between;
         }
 
-        @media (max-width: 850px) {
-            .modal-body-layout {
-                flex-direction: column;
-            }
-            .modal-details {
-                border-left: none;
-                border-top: 1px solid var(--border);
-            }
-        }
+
 
         .modal-title {
             font-family: 'Syne', sans-serif;
@@ -1333,12 +1235,7 @@
             color: var(--ghost);
         }
 
-        @media (max-width: 900px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-        }
+
 
         /* ─── CONTACT ────────────────────────────────────────────── */
         #contact {
@@ -1438,11 +1335,7 @@
             color: var(--white);
         }
 
-        @media (max-width: 900px) {
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
+
 
         /* Copy toast */
         .copy-toast {
@@ -1843,15 +1736,7 @@
             color: var(--steel);
         }
 
-        @media (max-width: 600px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
 
-            .form-group.full {
-                grid-column: 1;
-            }
-        }
 
         .form-actions {
             display: flex;
@@ -2038,6 +1923,703 @@
             background: var(--charcoal);
             border: 1px dashed var(--border);
             border-radius: var(--radius-lg);
+        }
+
+        /* ══════════════════════════════════════════════════════════
+           COMPREHENSIVE RESPONSIVE DESIGN SYSTEM
+           Breakpoints: 1200 → 900 → 768 → 600 → 400
+        ══════════════════════════════════════════════════════════ */
+
+        /* ── SMALL DESKTOP / LARGE TABLET (≤1200px) ─────────── */
+        @media (max-width: 1200px) {
+            .hero {
+                padding: 96px 2rem 3rem;
+            }
+            .section {
+                padding: 5rem 2rem;
+            }
+            .hero-inner,
+            .section-inner,
+            .footer-inner {
+                max-width: 100%;
+            }
+            .hero-portrait-abs {
+                width: clamp(180px, 22vw, 340px);
+            }
+            .about-grid {
+                gap: 3.5rem;
+            }
+            .contact-wrapper {
+                gap: 3rem;
+            }
+            .admin-inner {
+                max-width: 100%;
+                padding: 4rem 1.5rem 3rem;
+            }
+            .modal-box {
+                max-width: 95vw;
+            }
+        }
+
+        /* ── TABLET (≤900px) ────────────────────────────────── */
+        @media (max-width: 900px) {
+            .hero {
+                padding: 88px 1.5rem 2.5rem;
+                min-height: auto;
+            }
+            .hero-portrait-abs {
+                width: clamp(160px, 36vw, 260px);
+                bottom: 3.5rem;
+            }
+            .hero-bottom-row {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .hero-title-solid,
+            .hero-title-stroke {
+                white-space: normal;
+                text-align: center;
+            }
+            .hero-meta-row {
+                justify-content: center;
+            }
+            .hero-ctas {
+                justify-content: center;
+            }
+            .hero-software {
+                justify-content: center;
+            }
+            .section {
+                padding: 4rem 1.5rem;
+            }
+            .section-title {
+                font-size: clamp(1.8rem, 5vw, 3rem);
+                margin-bottom: 2rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.7rem;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .contact-big-text {
+                font-size: clamp(1.8rem, 5vw, 3rem);
+                text-align: center;
+            }
+            .contact-links {
+                gap: 0.75rem;
+            }
+            footer {
+                padding: 2rem 1.5rem;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+            .admin-inner {
+                padding: 3.5rem 1.25rem 2.5rem;
+            }
+            .admin-topbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .admin-work-item {
+                flex-direction: column;
+                gap: 0.85rem;
+            }
+            .admin-work-thumb {
+                width: 100%;
+                height: 140px;
+            }
+            .admin-work-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+
+        /* ── SMALL TABLET / LARGE PHONE (≤768px) ────────────── */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 1.25rem;
+                height: 64px;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0 2rem;
+                border-bottom: 1px solid var(--border);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links a {
+                display: block;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+            .nav-links a:hover::after {
+                display: none;
+            }
+            .nav-cta {
+                margin: 1rem 1.5rem 0;
+                display: inline-block;
+                text-align: center;
+            }
+            .hero {
+                padding: 80px 1.25rem 2rem;
+            }
+            .hero-title-solid,
+            .hero-title-stroke {
+                font-size: clamp(2rem, 6.5vw, 4.5rem);
+            }
+            .filter-row {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 0.6rem;
+                margin-bottom: 2rem;
+                scrollbar-width: none;
+                gap: 0.5rem;
+            }
+            .filter-row::-webkit-scrollbar {
+                display: none;
+            }
+            .filter-btn {
+                flex-shrink: 0;
+                white-space: nowrap;
+                padding: 0.5rem 1rem;
+                font-size: 0.78rem;
+            }
+            .work-card {
+                flex-direction: column;
+                min-height: auto;
+            }
+            .card-thumb-box {
+                width: 100%;
+                max-width: 100%;
+                min-width: unset;
+                aspect-ratio: 16/9;
+            }
+            .card-details-box {
+                padding: 1.25rem;
+            }
+            .card-title-text {
+                font-size: 1.1rem;
+            }
+            .card-desc-text {
+                font-size: 0.82rem;
+                -webkit-line-clamp: 3;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .modal-body-layout {
+                flex-direction: column;
+                min-height: auto;
+            }
+            .modal-details {
+                border-left: none;
+                border-top: 1px solid var(--border);
+                min-width: unset;
+                padding: 1.25rem;
+            }
+            .modal-video {
+                aspect-ratio: 16/9;
+            }
+            .modal-header {
+                padding: 0.85rem 1.25rem;
+            }
+            .modal-title {
+                font-size: 1rem;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full {
+                grid-column: 1;
+            }
+            .admin-form-card {
+                padding: 1.5rem;
+            }
+            .fab-wa {
+                width: 50px;
+                height: 50px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+            .fab-wa svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        /* ── MOBILE PHONE (≤600px) ──────────────────────────── */
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 0 1rem;
+                height: 58px;
+            }
+            .nav-links {
+                top: 58px;
+            }
+            .nav-links a {
+                padding: 0.85rem 1.25rem;
+                font-size: 0.95rem;
+            }
+            .nav-cta {
+                margin: 0.85rem 1.25rem 0;
+            }
+            .brand {
+                font-size: 1.15rem;
+            }
+            .hero {
+                padding: 72px 1rem 2rem;
+                min-height: auto;
+            }
+            .hero-meta-row {
+                gap: 0.6rem;
+                margin-bottom: 1.5rem;
+            }
+            .status-pill {
+                font-size: 0.7rem;
+                padding: 0.35rem 0.8rem;
+            }
+            .location-pill {
+                font-size: 0.7rem;
+            }
+            .hero-title-solid,
+            .hero-title-stroke {
+                font-size: clamp(1.8rem, 8vw, 3rem);
+            }
+            .hero-portrait-abs {
+                width: clamp(130px, 40vw, 200px);
+                bottom: 2.5rem;
+            }
+            .hero-bottom-row {
+                margin-top: 1.5rem;
+                gap: 1.25rem;
+            }
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.7rem;
+            }
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.85rem;
+            }
+            .hero-software {
+                justify-content: center;
+            }
+            .sw-badge {
+                font-size: 0.72rem;
+                padding: 0.35rem 0.7rem;
+                gap: 0.4rem;
+            }
+            .sw-icon {
+                font-size: 0.6rem;
+                padding: 2px 5px;
+            }
+            .ticker-item {
+                font-size: 0.68rem;
+                padding: 0 1.25rem;
+                gap: 0.5rem;
+            }
+            .section {
+                padding: 3rem 1rem;
+            }
+            .section-label {
+                font-size: 0.65rem;
+                letter-spacing: 0.14em;
+                margin-bottom: 0.85rem;
+            }
+            .section-title {
+                font-size: clamp(1.6rem, 6vw, 2.4rem);
+                margin-bottom: 1.5rem;
+            }
+            .portfolio-grid {
+                gap: 1rem;
+            }
+            .work-card {
+                border-radius: var(--radius-lg);
+            }
+            .card-details-box {
+                padding: 1rem;
+            }
+            .card-meta-row {
+                gap: 0.5rem;
+                margin-bottom: 0.3rem;
+            }
+            .card-category {
+                font-size: 0.6rem;
+            }
+            .card-year-pill {
+                font-size: 0.62rem;
+            }
+            .card-title-text {
+                font-size: 1rem;
+                margin-bottom: 0.3rem;
+            }
+            .card-desc-text {
+                font-size: 0.8rem;
+                -webkit-line-clamp: 2;
+                margin-bottom: 0.6rem;
+            }
+            .card-tools-list {
+                gap: 0.25rem;
+                margin-bottom: 0.5rem;
+            }
+            .card-bottom-actions {
+                padding-top: 0.5rem;
+                gap: 0.5rem;
+            }
+            .btn-watch {
+                font-size: 0.72rem;
+            }
+            .card-play-btn {
+                width: 42px;
+                height: 42px;
+            }
+            .card-play-btn svg {
+                width: 14px;
+                height: 14px;
+            }
+            .about-body {
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+            }
+            .tool-card {
+                padding: 0.75rem 1rem;
+            }
+            .service-item {
+                padding: 1rem 0;
+            }
+            .service-name {
+                font-size: 0.88rem;
+            }
+            .contact-big-text {
+                font-size: clamp(1.6rem, 7vw, 2.5rem);
+                margin-bottom: 1.25rem;
+            }
+            .contact-link {
+                padding: 1rem 1.1rem;
+                gap: 0.75rem;
+            }
+            .contact-link-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 8px;
+            }
+            .contact-link-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+            .contact-link-label {
+                font-size: 0.65rem;
+            }
+            .contact-link-value {
+                font-size: 0.85rem;
+            }
+            footer {
+                padding: 1.75rem 1rem;
+            }
+            .footer-copy {
+                font-size: 0.72rem;
+            }
+            .fab-wa {
+                width: 46px;
+                height: 46px;
+                bottom: 1.25rem;
+                right: 1.25rem;
+            }
+            .fab-wa svg {
+                width: 22px;
+                height: 22px;
+            }
+            .copy-toast {
+                font-size: 0.78rem;
+                padding: 0.55rem 1.2rem;
+                bottom: 1.5rem;
+            }
+            /* Modal responsive */
+            .modal-backdrop {
+                padding: 0.5rem;
+            }
+            .modal-box {
+                border-radius: var(--radius-lg);
+            }
+            .modal-header {
+                padding: 0.75rem 1rem;
+            }
+            .modal-title {
+                font-size: 0.92rem;
+            }
+            .modal-category {
+                font-size: 0.6rem;
+            }
+            .modal-close {
+                width: 32px;
+                height: 32px;
+                font-size: 0.85rem;
+            }
+            .modal-details {
+                padding: 1rem;
+            }
+            /* Auth modal responsive */
+            .auth-box {
+                padding: 1.75rem;
+                border-radius: var(--radius-lg);
+            }
+            .auth-title {
+                font-size: 1.2rem;
+            }
+            .auth-subtitle {
+                font-size: 0.78rem;
+                margin-bottom: 1.5rem;
+            }
+            .numpad {
+                gap: 0.45rem;
+            }
+            .num-btn {
+                font-size: 1rem;
+            }
+            /* Admin panel responsive */
+            .admin-inner {
+                padding: 2.5rem 1rem 2rem;
+            }
+            .admin-title {
+                font-size: 1.3rem;
+            }
+            .admin-form-card {
+                padding: 1.25rem;
+                border-radius: var(--radius-lg);
+            }
+            .admin-form-title {
+                font-size: 0.88rem;
+                margin-bottom: 1rem;
+            }
+            .form-actions {
+                flex-direction: column;
+            }
+            .btn-submit,
+            .btn-cancel-form {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+            .admin-work-item {
+                padding: 0.85rem 1rem;
+                gap: 0.75rem;
+            }
+            .admin-work-name {
+                font-size: 0.88rem;
+            }
+            .admin-work-desc {
+                font-size: 0.75rem;
+            }
+            .admin-work-actions {
+                gap: 0.35rem;
+            }
+            .admin-action-btn {
+                font-size: 0.68rem;
+                padding: 0.28rem 0.6rem;
+            }
+            /* Frame picker responsive */
+            .auth-box[style*="max-width:700px"] {
+                padding: 1.25rem !important;
+            }
+        }
+
+        /* ── SMALL MOBILE (≤400px) ──────────────────────────── */
+        @media (max-width: 400px) {
+            .navbar {
+                padding: 0 0.75rem;
+                height: 54px;
+            }
+            .nav-links {
+                top: 54px;
+            }
+            .brand {
+                font-size: 1.05rem;
+            }
+            .hero {
+                padding: 64px 0.75rem 1.5rem;
+            }
+            .hero-meta-row {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+            .hero-title-solid,
+            .hero-title-stroke {
+                font-size: clamp(1.5rem, 9vw, 2.2rem);
+            }
+            .hero-portrait-abs {
+                width: clamp(110px, 38vw, 170px);
+                bottom: 2rem;
+            }
+            .portrait-badge {
+                font-size: 0.5rem;
+                padding: 0.2rem 0.6rem;
+                gap: 0.3rem;
+            }
+            .section {
+                padding: 2.5rem 0.75rem;
+            }
+            .section-title {
+                font-size: clamp(1.35rem, 7vw, 2rem);
+            }
+            .sw-badge {
+                font-size: 0.65rem;
+                padding: 0.3rem 0.6rem;
+            }
+            .card-title-text {
+                font-size: 0.92rem;
+            }
+            .card-desc-text {
+                font-size: 0.75rem;
+            }
+            .about-body {
+                font-size: 0.85rem;
+            }
+            .tool-card {
+                padding: 0.65rem 0.85rem;
+            }
+            .tool-name {
+                font-size: 0.78rem;
+            }
+            .contact-big-text {
+                font-size: clamp(1.4rem, 8vw, 2rem);
+            }
+            .contact-link {
+                padding: 0.85rem 0.9rem;
+            }
+            .contact-link-value {
+                font-size: 0.8rem;
+                word-break: break-all;
+            }
+            .fab-wa {
+                width: 42px;
+                height: 42px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+            .fab-wa svg {
+                width: 20px;
+                height: 20px;
+            }
+            .auth-box {
+                padding: 1.5rem 1.25rem;
+            }
+            .pin-display {
+                gap: 0.45rem;
+                margin-bottom: 1.25rem;
+            }
+            .pin-dot {
+                width: 12px;
+                height: 12px;
+            }
+            .numpad {
+                gap: 0.35rem;
+            }
+            .num-btn {
+                font-size: 0.92rem;
+            }
+            .admin-inner {
+                padding: 2rem 0.75rem 1.5rem;
+            }
+            .admin-form-card {
+                padding: 1rem;
+            }
+            .form-input,
+            .form-select,
+            .form-textarea {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.82rem;
+            }
+            .modal-backdrop {
+                padding: 0.25rem;
+            }
+            .admin-topbar {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* ── LANDSCAPE PHONE FIX ────────────────────────────── */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding-top: 70px;
+                padding-bottom: 1.5rem;
+            }
+            .hero-portrait-abs {
+                width: clamp(100px, 18vh, 160px);
+                bottom: 1rem;
+            }
+            .hero-title-solid,
+            .hero-title-stroke {
+                font-size: clamp(1.5rem, 5vw, 3rem);
+            }
+            .hero-bottom-row {
+                margin-top: 1rem;
+            }
+            .modal-body-layout {
+                flex-direction: row;
+                min-height: auto;
+            }
+            .modal-video {
+                aspect-ratio: auto;
+                height: 60vh;
+            }
+        }
+
+        /* ── PRINT STYLES ──────────────────────────────────── */
+        @media print {
+            .navbar, .fab-wa, .ticker, .hamburger,
+            .admin-panel, .auth-backdrop, .modal-backdrop,
+            .copy-toast {
+                display: none !important;
+            }
+            .hero {
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
+            .section {
+                padding: 2rem 1rem;
+            }
+            body {
+                background: #fff;
+                color: #000;
+            }
         }
     </style>
 </head>
