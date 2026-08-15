@@ -119,6 +119,18 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* ─── SCROLL MOTION GRAPHICS CANVAS ─────────────────────── */
+        #bg-motion-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 1;
+        }
+
         ::selection {
             background: var(--accent);
             color: var(--black);
@@ -651,7 +663,8 @@
             border-bottom: 1px solid var(--border);
             overflow: hidden;
             padding: 0.9rem 0;
-            background: var(--charcoal);
+            background: rgba(26, 26, 26, 0.4);
+            backdrop-filter: blur(12px);
         }
 
         .ticker-track {
@@ -737,7 +750,7 @@
 
         /* ─── PORTFOLIO ──────────────────────────────────────────── */
         #works {
-            background: var(--black);
+            background: transparent;
         }
 
         .filter-row {
@@ -1139,7 +1152,7 @@
 
         /* ─── ABOUT ──────────────────────────────────────────────── */
         #about {
-            background: var(--charcoal);
+            background: transparent;
         }
 
         .about-grid {
@@ -1254,7 +1267,7 @@
 
         /* ─── CONTACT ────────────────────────────────────────────── */
         #contact {
-            background: var(--black);
+            background: transparent;
         }
 
         .contact-wrapper {
@@ -1379,7 +1392,8 @@
         footer {
             border-top: 1px solid var(--border);
             padding: 2.5rem 2.5rem;
-            background: var(--charcoal);
+            background: rgba(26, 26, 26, 0.4);
+            backdrop-filter: blur(12px);
         }
 
         .footer-inner {
@@ -2639,6 +2653,9 @@
 
 <body>
 
+    <!-- SCROLL BACKGROUND MOTION GRAPHICS CANVAS -->
+    <canvas id="bg-motion-canvas" aria-hidden="true"></canvas>
+
     <!-- COPY TOAST -->
     <div class="copy-toast" id="copy-toast">✓ Email copied!</div>
 
@@ -3638,6 +3655,233 @@
             if (igEl) igEl.href = INSTAGRAM_URL;
         }
 
+        /* ── BACKGROUND MOTION GRAPHICS ENGINE ── */
+        function initScrollMotionGraphics() {
+            const canvas = document.getElementById('bg-motion-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            let width = 0, height = 0, dpr = 1;
+            let scrollY = window.scrollY;
+            let targetScrollY = window.scrollY;
+            let scrollVelocity = 0;
+            let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
+
+            function resize() {
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                canvas.style.width = width + 'px';
+                canvas.style.height = height + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            window.addEventListener('resize', resize, { passive: true });
+            resize();
+
+            window.addEventListener('scroll', () => {
+                targetScrollY = window.scrollY;
+            }, { passive: true });
+
+            window.addEventListener('mousemove', (e) => {
+                targetMouseX = (e.clientX / width - 0.5) * 50;
+                targetMouseY = (e.clientY / height - 0.5) * 50;
+            }, { passive: true });
+
+            // Keyframe diamond elements (Adobe AE & Premiere style keyframe particles)
+            const keyframes = [];
+            const KEYFRAME_COUNT = 55;
+            const colors = [
+                'rgba(232, 255, 0, ',    // Neon Accent Yellow #e8ff00
+                'rgba(0, 242, 254, ',    // Cyan/Teal
+                'rgba(255, 106, 0, ',    // Vivid Orange
+                'rgba(168, 85, 247, ',   // AE Purple
+                'rgba(236, 72, 153, '    // Premiere Pink/Magenta
+            ];
+
+            for (let i = 0; i < KEYFRAME_COUNT; i++) {
+                keyframes.push({
+                    x: Math.random() * 1.15 - 0.075,
+                    y: Math.random() * 2.5 - 0.25,
+                    z: Math.random() * 1.3 + 0.4,
+                    size: Math.random() * 14 + 7,
+                    rotation: Math.random() * Math.PI * 2,
+                    rotSpeed: (Math.random() - 0.5) * 0.025,
+                    colorBase: colors[Math.floor(Math.random() * colors.length)],
+                    alpha: Math.random() * 0.4 + 0.35,
+                    shape: Math.floor(Math.random() * 3) // 0: Keyframe Diamond, 1: Film Frame, 2: Target Cross
+                });
+            }
+
+            let time = 0;
+
+            function render() {
+                time += 0.018;
+
+                // Smooth scroll velocity interpolation
+                const prevScrollY = scrollY;
+                scrollY += (targetScrollY - scrollY) * 0.14;
+                scrollVelocity = (scrollY - prevScrollY);
+
+                mouseX += (targetMouseX - mouseX) * 0.06;
+                mouseY += (targetMouseY - mouseY) * 0.06;
+
+                ctx.clearRect(0, 0, width, height);
+
+                // Paint deep dark background canvas layer
+                ctx.fillStyle = '#0a0a0a';
+                ctx.fillRect(0, 0, width, height);
+
+                // 1. Perspective Video Timeline Grid Lines
+                ctx.save();
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
+                ctx.lineWidth = 1;
+                const gridSpacing = 70;
+                const offsetGridY = (scrollY * 0.2) % gridSpacing;
+
+                ctx.beginPath();
+                for (let y = -gridSpacing + offsetGridY; y < height + gridSpacing; y += gridSpacing) {
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(width, y);
+                }
+                ctx.stroke();
+                ctx.restore();
+
+                // 2. Glowing Video Timeline Ribbon Tracks (V1, V2, A1 Tracks)
+                const ribbonTracks = [
+                    { color: '#00f2fe', yRatio: 0.25, freq: 0.002, amp: 75, speed: 0.001 },
+                    { color: '#ff6600', yRatio: 0.55, freq: 0.0028, amp: 95, speed: -0.0012 },
+                    { color: '#e8ff00', yRatio: 0.82, freq: 0.0018, amp: 65, speed: 0.0009 }
+                ];
+
+                ribbonTracks.forEach(track => {
+                    ctx.save();
+                    ctx.beginPath();
+                    const baseY = track.yRatio * height - (scrollY * 0.25);
+                    const wrappedY = ((baseY % (height * 1.5)) + (height * 1.5)) % (height * 1.5) - height * 0.25;
+
+                    ctx.moveTo(0, wrappedY);
+                    for (let x = 0; x <= width; x += 12) {
+                        const scrollWave = Math.sin(x * track.freq + time * track.speed * 100 + scrollY * 0.002) * (track.amp + Math.abs(scrollVelocity) * 1.3);
+                        ctx.lineTo(x, wrappedY + scrollWave + mouseY * 0.3);
+                    }
+
+                    ctx.strokeStyle = track.color;
+                    ctx.globalAlpha = Math.min(0.4 + Math.abs(scrollVelocity) * 0.02, 0.85);
+                    ctx.lineWidth = 3 + Math.min(Math.abs(scrollVelocity) * 0.1, 5);
+                    ctx.shadowColor = track.color;
+                    ctx.shadowBlur = 14;
+                    ctx.stroke();
+                    ctx.restore();
+                });
+
+                // 3. Playhead Marker Line (Sweeps across timeline)
+                ctx.save();
+                const playheadX = ((time * 60 + scrollY * 0.8) % (width * 1.4)) - width * 0.2;
+                ctx.strokeStyle = 'rgba(232, 255, 0, 0.4)';
+                ctx.lineWidth = 2;
+                ctx.shadowColor = '#e8ff00';
+                ctx.shadowBlur = 10;
+                ctx.beginPath();
+                ctx.moveTo(playheadX, 0);
+                ctx.lineTo(playheadX, height);
+                ctx.stroke();
+
+                // Top Playhead Diamond Head
+                ctx.fillStyle = '#e8ff00';
+                ctx.beginPath();
+                ctx.moveTo(playheadX, 15);
+                ctx.lineTo(playheadX + 8, 0);
+                ctx.lineTo(playheadX - 8, 0);
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+
+                // 4. Floating AE Keyframe Diamonds & Motion Graphics Elements
+                keyframes.forEach((kf) => {
+                    const screenX = kf.x * width + mouseX * kf.z;
+                    const rawY = (kf.y * height) - (scrollY * 0.45 * kf.z);
+                    const screenY = ((rawY % (height * 1.6)) + (height * 1.6)) % (height * 1.6) - height * 0.3;
+
+                    kf.rotation += kf.rotSpeed + scrollVelocity * 0.001;
+
+                    ctx.save();
+                    ctx.translate(screenX, screenY);
+                    ctx.rotate(kf.rotation);
+
+                    // Speed ramp motion blur scale effect on scroll
+                    const streakScaleY = 1 + Math.abs(scrollVelocity) * 0.08 * kf.z;
+                    ctx.scale(1, streakScaleY);
+
+                    const dynamicAlpha = Math.min(kf.alpha + Math.abs(scrollVelocity) * 0.01, 0.9);
+                    ctx.fillStyle = kf.colorBase + dynamicAlpha + ')';
+                    ctx.strokeStyle = kf.colorBase + Math.min(dynamicAlpha * 1.3, 1) + ')';
+                    ctx.lineWidth = 1.8;
+                    ctx.shadowColor = kf.colorBase + '0.9)';
+                    ctx.shadowBlur = 10 * kf.z;
+
+                    const sz = kf.size * kf.z;
+
+                    if (kf.shape === 0) {
+                        // AE Diamond Keyframe
+                        ctx.beginPath();
+                        ctx.moveTo(0, -sz);
+                        ctx.lineTo(sz * 0.85, 0);
+                        ctx.lineTo(0, sz);
+                        ctx.lineTo(-sz * 0.85, 0);
+                        ctx.closePath();
+                        ctx.fill();
+                        ctx.stroke();
+                    } else if (kf.shape === 1) {
+                        // Film Frame Rectangle
+                        ctx.beginPath();
+                        ctx.rect(-sz, -sz * 0.65, sz * 2, sz * 1.3);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(0, 0, sz * 0.35, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else {
+                        // Playhead Target Cross
+                        ctx.beginPath();
+                        ctx.moveTo(-sz, 0); ctx.lineTo(sz, 0);
+                        ctx.moveTo(0, -sz); ctx.lineTo(0, sz);
+                        ctx.stroke();
+                    }
+
+                    ctx.restore();
+                });
+
+                // 5. Audio / Color Radar Scope Waveform
+                ctx.save();
+                const scopeWidth = 140;
+                const scopeX = width - scopeWidth - 24;
+                const scopeY = height - 40;
+                ctx.globalAlpha = 0.6 + Math.min(Math.abs(scrollVelocity) * 0.02, 0.35);
+                ctx.strokeStyle = '#e8ff00';
+                ctx.lineWidth = 2;
+                ctx.shadowColor = '#e8ff00';
+                ctx.shadowBlur = 8;
+                ctx.beginPath();
+                for (let i = 0; i < scopeWidth; i += 4) {
+                    const barH = Math.sin(i * 0.12 + time * 4 + scrollY * 0.01) * 16 + Math.abs(scrollVelocity) * 1.4 + 8;
+                    ctx.moveTo(scopeX + i, scopeY);
+                    ctx.lineTo(scopeX + i, scopeY - barH);
+                }
+                ctx.stroke();
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '9px monospace';
+                ctx.fillText('COLOR / TIMELINE SCOPE', scopeX, scopeY + 14);
+                ctx.restore();
+
+                requestAnimationFrame(render);
+            }
+
+            requestAnimationFrame(render);
+        }
+
         /* ── INIT ── */
         document.addEventListener('DOMContentLoaded', () => {
             state.works = loadStorage() || DEFAULT_WORKS;
@@ -3650,6 +3894,7 @@
             initModal();
             initReveal();
             updateLinks();
+            initScrollMotionGraphics();
         });
     </script>
 </body>
