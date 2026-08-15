@@ -15,7 +15,7 @@ const API_ENDPOINT = isLocalEnv
   ? (window.location.port === '8080' ? '/api/works' : 'http://localhost:8080/api/works')
   : null;
 
-const LOCAL_STORAGE_KEY = 'junaid_portfolio_works_v1';
+const LOCAL_STORAGE_KEY = 'junaid_portfolio_works_v2';
 
 let allWorks = [];
 let activeCategory = 'All';
@@ -115,36 +115,20 @@ async function loadWorks() {
   if (!allWorks || allWorks.length === 0) {
     allWorks = [
       {
-        id: "work-101",
-        title: "Commercial Brand Reel 2026",
-        category: "Editing",
-        videoUrl: "https://www.youtube.com/watch?v=ScMzIvxBSi4",
+        id: "work-alabaraha",
+        title: "Alabaraha Real Estate Commercial",
+        category: "Commercial",
+        videoUrl: "/uploads/ALABARAHA_REALESTATE.mp4",
         tools: "Adobe Premiere Pro, After Effects, DaVinci Resolve",
-        desc: "High-energy commercial cut featuring fast-paced transitions, precise rhythmic sound design, and custom color grading."
+        desc: "High-impact commercial promo and real estate showcase edit featuring dynamic cuts, sleek typography, and color grading."
       },
       {
-        id: "work-102",
-        title: "Kerala Cinematic Journey",
+        id: "work-lokha",
+        title: "Lokha Project",
         category: "Videography",
-        videoUrl: "https://www.youtube.com/watch?v=L_LUpnjgPso",
-        tools: "Sony FX3, Gimbal, Premiere Pro",
-        desc: "Atmospheric 4K videography highlighting the lush landscapes, backwaters, and vibrant culture of Kerala."
-      },
-      {
-        id: "work-103",
-        title: "Urban Motion Graphics & Title Intro",
-        category: "Motion Graphics",
-        videoUrl: "https://www.youtube.com/watch?v=ScMzIvxBSi4",
-        tools: "Adobe After Effects, Element 3D",
-        desc: "Sleek 3D motion typography, fluid title animations, and visual effects package crafted for brand campaign intros."
-      },
-      {
-        id: "work-104",
-        title: "Social Media Viral Reel",
-        category: "Reels",
-        videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        tools: "Premiere Pro, Kinetic Captions, Sound FX",
-        desc: "Vertical format reel optimized for Instagram & TikTok with dynamic punch-in cuts and engaging sound effects."
+        videoUrl: "/uploads/lokha.mp4",
+        tools: "Sony FX3, Premiere Pro, Color Grading",
+        desc: "Atmospheric cinematic video edit showcasing immersive visual storytelling, rhythmic pacing, and high-energy cuts."
       }
     ];
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(allWorks));

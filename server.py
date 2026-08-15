@@ -10,52 +10,24 @@ DATA_FILE = os.path.join(os.path.dirname(__file__), "works.json")
 
 INITIAL_WORKS = [
     {
-        "id": "work-101",
-        "title": "Commercial Brand Reel 2026",
-        "category": "Editing",
-        "videoUrl": "https://www.youtube.com/watch?v=ScMzIvxBSi4",
-        "tools": "Adobe Premiere Pro, After Effects, DaVinci Resolve",
-        "desc": "High-energy commercial cut featuring fast-paced transitions, precise rhythmic sound design, and custom color grading."
+        "id": "work-alabaraha",
+        "title": "Alabaraha Real Estate Commercial",
+        "category": "Commercial",
+        "videoUrl": "/uploads/ALABARAHA_REALESTATE.mp4",
+        "thumbUrl": "",
+        "year": "2026",
+        "tools": "Premiere Pro, After Effects, DaVinci Resolve",
+        "desc": "High-impact commercial promo and real estate showcase edit featuring dynamic cuts, sleek typography, and color grading."
     },
     {
-        "id": "work-102",
-        "title": "Kerala Cinematic Journey",
+        "id": "work-lokha",
+        "title": "Lokha Project",
         "category": "Videography",
-        "videoUrl": "https://www.youtube.com/watch?v=L_LUpnjgPso",
-        "tools": "Sony FX3, Gimbal, Premiere Pro",
-        "desc": "Atmospheric 4K videography highlighting the lush landscapes, backwaters, and vibrant culture of Kerala."
-    },
-    {
-        "id": "work-103",
-        "title": "Urban Motion Graphics & Title Intro",
-        "category": "Motion Graphics",
-        "videoUrl": "https://www.youtube.com/watch?v=ScMzIvxBSi4",
-        "tools": "Adobe After Effects, Element 3D",
-        "desc": "Sleek 3D motion typography, fluid title animations, and visual effects package crafted for brand campaign intros."
-    },
-    {
-        "id": "work-104",
-        "title": "Social Media Viral Reel",
-        "category": "Reels",
-        "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "tools": "Premiere Pro, Kinetic Captions, Sound FX",
-        "desc": "Vertical format reel optimized for Instagram & TikTok with dynamic punch-in cuts and engaging sound effects."
-    },
-    {
-        "id": "work-105",
-        "title": "Fashion Showcase Lookbook",
-        "category": "Editing",
-        "videoUrl": "https://www.youtube.com/watch?v=L_LUpnjgPso",
-        "tools": "Adobe Premiere Pro, Lumetri Color",
-        "desc": "Stylized editorial fashion cut with high-contrast color grading and rhythmic beat matching."
-    },
-    {
-        "id": "work-106",
-        "title": "Malappuram Heritage Documentary Short",
-        "category": "Videography",
-        "videoUrl": "https://www.youtube.com/watch?v=ScMzIvxBSi4",
-        "tools": "Sony A7S III, Prime Lenses",
-        "desc": "Cinematic documentary short exploring local artisans and heritage locations in Malappuram."
+        "videoUrl": "/uploads/lokha.mp4",
+        "thumbUrl": "",
+        "year": "2026",
+        "tools": "Sony FX3, Premiere Pro, Color Grading",
+        "desc": "Atmospheric cinematic video edit showcasing immersive visual storytelling, rhythmic pacing, and high-energy cuts."
     }
 ]
 

@@ -5,11 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Portal — Junaid Portfolio Management</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet" />
 
     <style>
         :root {
@@ -29,7 +31,9 @@
             --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -91,7 +95,9 @@
             letter-spacing: 0.02em;
         }
 
-        .form-input, .form-select, .form-textarea {
+        .form-input,
+        .form-select,
+        .form-textarea {
             width: 100%;
             background: var(--iron);
             border: 1px solid var(--border);
@@ -104,7 +110,9 @@
             outline: none;
         }
 
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
             border-color: var(--accent);
             box-shadow: 0 0 0 3px rgba(232, 255, 0, 0.12);
         }
@@ -206,35 +214,43 @@
             .dashboard {
                 padding: 1rem 0.85rem 4rem;
             }
+
             .dash-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1rem;
             }
+
             .dash-title {
                 font-size: 1.45rem;
             }
+
             .dash-actions {
                 width: 100%;
                 display: flex;
                 gap: 0.5rem;
             }
+
             .dash-actions .btn-secondary {
                 flex: 1;
                 justify-content: center;
                 font-size: 0.75rem;
                 padding: 0.5rem 0.6rem;
             }
+
             .card-panel {
                 padding: 1.25rem 1rem;
             }
+
             .work-item {
                 flex-direction: column;
             }
+
             .work-thumb {
                 width: 100%;
                 height: 180px;
             }
+
             .modal-box {
                 padding: 1.25rem 1rem;
                 max-width: 98%;
@@ -392,7 +408,8 @@
             <form id="login-form">
                 <div class="form-group">
                     <label class="form-label" for="login-pass">Admin Password</label>
-                    <input type="password" id="login-pass" class="form-input" placeholder="Enter password..." required autofocus />
+                    <input type="password" id="login-pass" class="form-input" placeholder="Enter password..." required
+                        autofocus />
                 </div>
                 <button type="submit" class="btn-submit">Login to Dashboard</button>
                 <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
@@ -405,11 +422,13 @@
         <header class="dash-header">
             <div>
                 <div class="dash-title">Junaid's Portfolio CMS</div>
-                <div style="font-size:.8rem;color:var(--mist);margin-top:.2rem;">Manage project videos, details, and video frame thumbnails</div>
+                <div style="font-size:.8rem;color:var(--mist);margin-top:.2rem;">Manage project videos, details, and
+                    video frame thumbnails</div>
             </div>
             <div class="dash-actions">
                 <a href="http://localhost:8080/" target="_blank" class="btn-secondary">🌐 View Live Portfolio</a>
-                <button onclick="logout()" class="btn-secondary" style="color:#fca5a5;border-color:rgba(239,68,68,0.3);">Logout</button>
+                <button onclick="logout()" class="btn-secondary"
+                    style="color:#fca5a5;border-color:rgba(239,68,68,0.3);">Logout</button>
             </div>
         </header>
 
@@ -419,10 +438,11 @@
                 <div class="panel-title" id="form-mode-title">Add New Project</div>
                 <form id="work-form">
                     <input type="hidden" id="edit-id" value="" />
-                    
+
                     <div class="form-group">
                         <label class="form-label" for="f-title">Project Title *</label>
-                        <input type="text" id="f-title" class="form-input" placeholder="e.g. Real Estate Commercial Edit" required />
+                        <input type="text" id="f-title" class="form-input"
+                            placeholder="e.g. Real Estate Commercial Edit" required />
                     </div>
 
                     <div class="form-group">
@@ -441,20 +461,26 @@
                     <div class="form-group">
                         <label class="form-label" for="f-video">Video File or URL *</label>
                         <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
-                            <input type="text" id="f-video" class="form-input" style="flex:1;min-width:180px;" placeholder="Paste YouTube link or local MP4 path" required />
-                            <label for="f-file-input" style="padding:.7rem 1rem;background:var(--steel);color:var(--white);border-radius:var(--radius);cursor:pointer;font-size:.8rem;font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;gap:.3rem;">
+                            <input type="text" id="f-video" class="form-input" style="flex:1;min-width:180px;"
+                                placeholder="Paste YouTube link or local MP4 path" required />
+                            <label for="f-file-input"
+                                style="padding:.7rem 1rem;background:var(--steel);color:var(--white);border-radius:var(--radius);cursor:pointer;font-size:.8rem;font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;gap:.3rem;">
                                 📁 File...
                             </label>
-                            <input type="file" id="f-file-input" accept="video/*" style="display:none;" onchange="uploadVideoFile(this)" />
+                            <input type="file" id="f-file-input" accept="video/*" style="display:none;"
+                                onchange="uploadVideoFile(this)" />
                         </div>
-                        <span id="upload-status" style="font-size:.75rem;color:var(--mist);margin-top:.25rem;display:block;"></span>
+                        <span id="upload-status"
+                            style="font-size:.75rem;color:var(--mist);margin-top:.25rem;display:block;"></span>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="f-thumb">Thumbnail Frame</label>
                         <div style="display:flex;gap:.5rem;">
-                            <input type="text" id="f-thumb" class="form-input" style="flex:1;" placeholder="Auto-captured on save if empty" />
-                            <button type="button" onclick="openFramePickerModal()" style="padding:.7rem .9rem;background:var(--accent);color:var(--black);border:none;border-radius:var(--radius);font-weight:700;font-size:.8rem;cursor:pointer;white-space:nowrap;">
+                            <input type="text" id="f-thumb" class="form-input" style="flex:1;"
+                                placeholder="Auto-captured on save if empty" />
+                            <button type="button" onclick="openFramePickerModal()"
+                                style="padding:.7rem .9rem;background:var(--accent);color:var(--black);border:none;border-radius:var(--radius);font-weight:700;font-size:.8rem;cursor:pointer;white-space:nowrap;">
                                 🎬 Pick Frame
                             </button>
                         </div>
@@ -467,17 +493,20 @@
 
                     <div class="form-group">
                         <label class="form-label" for="f-tools">Tools Used</label>
-                        <input type="text" id="f-tools" class="form-input" placeholder="e.g. Premiere Pro, After Effects" />
+                        <input type="text" id="f-tools" class="form-input"
+                            placeholder="e.g. Premiere Pro, After Effects" />
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="f-desc">Description</label>
-                        <textarea id="f-desc" class="form-textarea" rows="3" placeholder="Brief details about the video project..."></textarea>
+                        <textarea id="f-desc" class="form-textarea" rows="3"
+                            placeholder="Brief details about the video project..."></textarea>
                     </div>
 
                     <div style="display:flex;gap:.75rem;margin-top:1.5rem;">
                         <button type="button" onclick="resetForm()" class="btn-secondary" style="flex:1;">Reset</button>
-                        <button type="submit" id="form-submit-btn" class="btn-submit" style="flex:2;">💾 Save Project</button>
+                        <button type="submit" id="form-submit-btn" class="btn-submit" style="flex:2;">💾 Save
+                            Project</button>
                     </div>
                 </form>
             </div>
@@ -486,7 +515,9 @@
             <div class="card-panel">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
                     <div class="panel-title" style="margin:0;">Portfolio Works List</div>
-                    <span style="font-size:.78rem;color:var(--accent);background:rgba(232,255,0,0.1);padding:.2rem .6rem;border-radius:99px;font-weight:700;" id="works-count">0 Items</span>
+                    <span
+                        style="font-size:.78rem;color:var(--accent);background:rgba(232,255,0,0.1);padding:.2rem .6rem;border-radius:99px;font-weight:700;"
+                        id="works-count">0 Items</span>
                 </div>
                 <div id="works-list"></div>
             </div>
@@ -497,10 +528,13 @@
     <div class="modal-backdrop" id="frame-picker-modal">
         <div class="modal-box">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-                <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;">Select Thumbnail Frame</div>
-                <button onclick="closeFramePickerModal()" style="background:none;border:none;color:var(--white);font-size:1.2rem;cursor:pointer;">&#x2715;</button>
+                <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;">Select Thumbnail Frame
+                </div>
+                <button onclick="closeFramePickerModal()"
+                    style="background:none;border:none;color:var(--white);font-size:1.2rem;cursor:pointer;">&#x2715;</button>
             </div>
-            <div style="width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--radius);overflow:hidden;margin-bottom:1rem;">
+            <div
+                style="width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--radius);overflow:hidden;margin-bottom:1rem;">
                 <video id="picker-video" style="width:100%;height:100%;object-fit:contain;" controls></video>
                 <canvas id="picker-canvas" style="display:none;"></canvas>
             </div>
@@ -509,11 +543,13 @@
                     <span>Scrub Timeline:</span>
                     <span id="picker-time" style="color:var(--accent);font-family:monospace;">0:00 / 0:00</span>
                 </div>
-                <input type="range" id="picker-slider" min="0" max="100" value="0" step="0.1" style="width:100%;accent-color:var(--accent);" oninput="scrubPicker(this.value)" />
+                <input type="range" id="picker-slider" min="0" max="100" value="0" step="0.1"
+                    style="width:100%;accent-color:var(--accent);" oninput="scrubPicker(this.value)" />
             </div>
             <div style="display:flex;justify-content:flex-end;gap:.75rem;">
                 <button type="button" onclick="closeFramePickerModal()" class="btn-secondary">Cancel</button>
-                <button type="button" onclick="captureFrame()" class="btn-submit" style="width:auto;padding:.6rem 1.25rem;">🎯 Capture Frame</button>
+                <button type="button" onclick="captureFrame()" class="btn-submit"
+                    style="width:auto;padding:.6rem 1.25rem;">🎯 Capture Frame</button>
             </div>
         </div>
     </div>
@@ -569,7 +605,7 @@
         }
 
         function saveStorage() {
-            try { localStorage.setItem(LS_KEY, JSON.stringify(works)); } catch (e) {}
+            try { localStorage.setItem(LS_KEY, JSON.stringify(works)); } catch (e) { }
         }
 
         /* ── HELPERS ── */
@@ -602,25 +638,35 @@
             }
 
             container.innerHTML = works.map(w => {
+                const isVid = isDirectVideo(w.videoUrl || '');
+                const vidSrc = isVid ? getDirectVideoSrc(w.videoUrl) : '';
                 const thumb = w.thumbUrl || getYtThumb(w.videoUrl) || '';
                 const toolsBadges = (w.tools || '').split(',').map(t => '<span class="badge-pill">' + esc(t.trim()) + '</span>').join(' ');
-                
-                return '<div class="work-item">'
-                    + '<div class="work-thumb">'
-                    + (thumb ? '<img src="' + esc(thumb) + '" alt="" />' : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--mist);">&#127916;</div>')
-                    + '</div>'
-                    + '<div class="work-info">'
+
+                let mediaHtml = '';
+                if (isVid && vidSrc) {
+                    mediaHtml = '<video src="' + esc(vidSrc) + '" controls muted playsinline style="width:140px;height:90px;object-fit:cover;border-radius:8px;background:#000;flex-shrink:0;"></video>';
+                } else if (thumb) {
+                    mediaHtml = '<img src="' + esc(thumb) + '" alt="" style="width:140px;height:90px;object-fit:cover;border-radius:8px;flex-shrink:0;" />';
+                } else {
+                    mediaHtml = '<div style="width:140px;height:90px;display:flex;align-items:center;justify-content:center;color:var(--mist);background:#1a1a1a;border-radius:8px;flex-shrink:0;">&#127916;</div>';
+                }
+
+                return '<div class="work-item" style="display:flex;gap:1.25rem;align-items:center;padding:1rem;background:var(--charcoal);border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;">'
+                    + mediaHtml
+                    + '<div class="work-info" style="flex:1;">'
                     + '<div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">'
-                    + '<span class="work-name">' + esc(w.title) + '</span>'
+                    + '<span class="work-name" style="font-weight:700;font-size:1.1rem;color:#fff;">' + esc(w.title) + '</span>'
                     + '<span class="badge-pill" style="color:var(--accent);background:rgba(232,255,0,0.1);">' + esc(w.category || 'Video') + '</span>'
                     + (w.year ? '<span class="badge-pill">' + esc(w.year) + '</span>' : '')
                     + '</div>'
-                    + (toolsBadges ? '<div style="display:flex;gap:.3rem;margin:.2rem 0;">' + toolsBadges + '</div>' : '')
-                    + '<div class="work-desc">' + esc(w.desc || 'No description.') + '</div>'
-                    + '<div class="work-actions">'
+                    + (toolsBadges ? '<div style="display:flex;gap:.3rem;margin:.4rem 0;">' + toolsBadges + '</div>' : '')
+                    + '<div class="work-desc" style="font-size:.85rem;color:var(--ghost);">' + esc(w.desc || 'No description.') + '</div>'
+                    + '<div style="margin-top:.4rem;font-size:.78rem;color:var(--mist);word-break:break-all;">📹 Video URL: ' + esc(w.videoUrl) + '</div>'
+                    + '</div>'
+                    + '<div class="work-actions" style="display:flex;flex-direction:column;gap:.5rem;">'
                     + '<button class="action-btn" onclick="editWork(\'' + esc(w.id) + '\')">Edit</button>'
                     + '<button class="action-btn danger" onclick="deleteWork(\'' + esc(w.id) + '\')">Delete</button>'
-                    + '</div>'
                     + '</div>'
                     + '</div>';
             }).join('');
@@ -639,19 +685,19 @@
                 headers: { 'X-Filename': file.name, 'Content-Type': file.type || 'application/octet-stream' },
                 body: file
             })
-            .then(r => r.json())
-            .then(data => {
-                if (data.url) {
-                    document.getElementById('f-video').value = data.url;
-                    status.textContent = '✓ Saved to uploads/' + data.filename;
+                .then(r => r.json())
+                .then(data => {
+                    if (data.url) {
+                        document.getElementById('f-video').value = data.url;
+                        status.textContent = '✓ Saved to uploads/' + data.filename;
+                        status.style.color = '#22c55e';
+                    }
+                })
+                .catch(() => {
+                    document.getElementById('f-video').value = URL.createObjectURL(file);
+                    status.textContent = '✓ Loaded file: ' + file.name;
                     status.style.color = '#22c55e';
-                }
-            })
-            .catch(() => {
-                document.getElementById('f-video').value = URL.createObjectURL(file);
-                status.textContent = '✓ Loaded file: ' + file.name;
-                status.style.color = '#22c55e';
-            });
+                });
         }
 
         /* ── FRAME PICKER MODAL ── */
@@ -689,7 +735,7 @@
 
         function updateTimeDisplay() {
             if (!pickerVideo) return;
-            const fmt = s => Math.floor(s/60) + ':' + (Math.floor(s%60)<10?'0':'') + Math.floor(s%60);
+            const fmt = s => Math.floor(s / 60) + ':' + (Math.floor(s % 60) < 10 ? '0' : '') + Math.floor(s % 60);
             document.getElementById('picker-time').textContent = fmt(pickerVideo.currentTime) + ' / ' + fmt(pickerVideo.duration || 0);
         }
 
@@ -738,7 +784,7 @@
                 } else {
                     await fetch('/api/works', { method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' } });
                 }
-            } catch (e) {}
+            } catch (e) { }
 
             saveStorage();
             renderList();
@@ -772,7 +818,7 @@
             const w = works.find(x => x.id === id); if (!w) return;
             if (!confirm('Delete "' + w.title + '"?')) return;
             works = works.filter(x => x.id !== id);
-            try { await fetch('/api/works/' + id, { method: 'DELETE' }); } catch (e) {}
+            try { await fetch('/api/works/' + id, { method: 'DELETE' }); } catch (e) { }
             saveStorage();
             renderList();
         }

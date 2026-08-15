@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "work-alabaraha",
+    "title": "Alabaraha Real Estate Commercial",
+    "category": "Commercial",
+    "videoUrl": "/uploads/ALABARAHA_REALESTATE.mp4",
+    "thumbUrl": "",
+    "year": "2026",
+    "tools": "Premiere Pro, After Effects, DaVinci Resolve",
+    "desc": "High-impact commercial promo and real estate showcase edit featuring dynamic cuts, sleek typography, and color grading."
+  },
+  {
+    "id": "work-lokha",
+    "title": "Lokha Project",
+    "category": "Videography",
+    "videoUrl": "/uploads/lokha.mp4",
+    "thumbUrl": "",
+    "year": "2026",
+    "tools": "Sony FX3, Premiere Pro, Color Grading",
+    "desc": "Atmospheric cinematic video edit showcasing immersive visual storytelling, rhythmic pacing, and high-energy cuts."
+  }
+]

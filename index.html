@@ -89,15 +89,15 @@
             --charcoal: #1a1a1a;
             --iron: #2a2a2a;
             --steel: #3a3a3a;
-            --mist: #888888;
-            --ghost: #cccccc;
-            --snow: #f5f5f5;
+            --mist: #b0b0ba;
+            --ghost: #e4e4e7;
+            --snow: #f8f8f8;
             --white: #ffffff;
             --accent: #e8ff00;
-            --accent-dim: rgba(232, 255, 0, 0.08);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-light: rgba(255, 255, 255, 0.14);
-            --glass: rgba(255, 255, 255, 0.04);
+            --accent-dim: rgba(232, 255, 0, 0.12);
+            --border: rgba(255, 255, 255, 0.12);
+            --border-light: rgba(255, 255, 255, 0.22);
+            --glass: rgba(255, 255, 255, 0.07);
             --glass-hover: rgba(255, 255, 255, 0.08);
             --radius: 12px;
             --radius-lg: 20px;
@@ -128,7 +128,10 @@
             height: 100vh;
             pointer-events: none;
             z-index: -1;
-            opacity: 1;
+            opacity: 0.15;
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            transition: opacity 0.5s ease, filter 0.5s ease;
         }
 
         ::selection {
@@ -344,10 +347,28 @@
         }
 
         .hero-text-col {
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 1.75rem;
+            z-index: 2;
+        }
+
+        /* Soft dark radial gradient vignette directly behind main Video Editor text */
+        .hero-text-col::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.75) 45%, rgba(10, 10, 10, 0) 75%);
+            pointer-events: none;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(25px);
         }
 
         .hero-meta-row {
@@ -361,13 +382,15 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            border: 1px solid var(--border-light);
+            padding: 0.45rem 1.1rem;
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            background: rgba(34, 197, 94, 0.12);
             border-radius: 99px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--ghost);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #ffffff;
             letter-spacing: 0.04em;
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.15);
         }
 
         .status-dot {
@@ -388,10 +411,15 @@
         .location-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            font-size: 0.78rem;
-            color: var(--mist);
+            gap: 0.45rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #f4f4f5;
             letter-spacing: 0.04em;
+            padding: 0.45rem 0.9rem;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 99px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
         }
 
         .location-pill svg {
@@ -413,6 +441,7 @@
             font-size: clamp(2.6rem, 5.2vw, 5.8rem);
             font-weight: 800;
             color: var(--white);
+            text-shadow: 0 0 35px rgba(255, 255, 255, 0.2);
         }
 
         .hero-title-stroke {
@@ -421,8 +450,9 @@
             font-size: clamp(2.6rem, 5.2vw, 5.8rem);
             font-weight: 800;
             color: transparent;
-            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+            -webkit-text-stroke: 1.8px rgba(255, 255, 255, 0.85);
             letter-spacing: -0.03em;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
         /* ── CHARACTER PORTRAIT SIDE CARD ── */
@@ -432,6 +462,23 @@
             justify-content: center;
             align-items: center;
             width: 100%;
+            z-index: 2;
+        }
+
+        /* Soft dark radial gradient vignette directly behind portrait card */
+        .hero-portrait-side::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 155%;
+            height: 155%;
+            background: radial-gradient(circle at center, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.7) 48%, rgba(10, 10, 10, 0) 80%);
+            pointer-events: none;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(30px);
         }
 
         .hero-portrait-card {
@@ -571,21 +618,22 @@
             display: inline-flex;
             align-items: center;
             gap: 0.65rem;
-            padding: 0.5rem 1rem;
-            background: var(--glass);
-            border: 1px solid var(--border);
+            padding: 0.55rem 1.1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: var(--radius);
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--ghost);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #ffffff;
             width: fit-content;
             transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .sw-badge:hover {
-            border-color: var(--border-light);
-            color: var(--white);
-            background: var(--glass-hover);
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(232, 255, 0, 0.1);
         }
 
         .sw-icon {
@@ -940,10 +988,10 @@
         }
 
         .card-desc-text {
-            font-size: 0.85rem;
-            color: var(--mist);
-            line-height: 1.55;
-            font-weight: 300;
+            font-size: 0.88rem;
+            color: #e4e4e7;
+            line-height: 1.6;
+            font-weight: 400;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -2701,11 +2749,15 @@
                     <span class="hero-title-stroke">&amp; Videographer</span>
                 </div>
 
+                <p style="font-size:1.05rem;color:#f4f4f5;font-weight:500;max-width:560px;line-height:1.7;margin-top:-0.5rem;" class="reveal reveal-delay-2">
+                    Specialized in <strong style="color:#ffffff;border-bottom:2px solid var(--accent);">Commercial Promos</strong>, <strong style="color:#ffffff;border-bottom:2px solid var(--accent);">Viral Reels</strong>, and <strong style="color:#ffffff;border-bottom:2px solid var(--accent);">Cinematic Motion Graphics</strong>.
+                </p>
+
                 <!-- Software Badges -->
                 <div class="hero-software reveal reveal-delay-2">
                     <div class="sw-badge"><span class="sw-icon ae">Ae</span>After Effects</div>
                     <div class="sw-badge"><span class="sw-icon pr">Pr</span>Premiere Pro</div>
-                    <div class="sw-badge"><span style="font-size:.82rem;">&#10022;</span>Motion Design</div>
+                    <div class="sw-badge"><span style="font-size:.85rem;color:var(--accent);">&#10022;</span>Motion Design</div>
                 </div>
 
                 <!-- CTAs -->
@@ -3112,16 +3164,12 @@
         const WHATSAPP_NUMBER = '917736050347';
         const EMAIL_ADDRESS = 'muhamadjunaidm1@gmail.com';
         const INSTAGRAM_URL = 'https://www.instagram.com/junaiid.pvt';
-        const LS_KEY = 'junaid_portfolio_v3';
+        const LS_KEY = 'junaid_portfolio_v4';
 
         /* ── DEFAULT WORKS ── */
         const DEFAULT_WORKS = [
-            { id: 'w001', title: 'Cinematic Brand Reel', category: 'Commercial', videoUrl: 'https://www.youtube.com/watch?v=ScMzIvxBSi4', thumbUrl: 'https://img.youtube.com/vi/ScMzIvxBSi4/maxresdefault.jpg', year: '2026', tools: 'Premiere Pro, After Effects', desc: 'High-energy commercial cut with fast transitions, rhythmic sound design, and custom color grading.' },
-            { id: 'w002', title: 'Kerala Cinematic Journey', category: 'Videography', videoUrl: 'https://www.youtube.com/watch?v=L_LUpnjgPso', thumbUrl: 'https://img.youtube.com/vi/L_LUpnjgPso/maxresdefault.jpg', year: '2025', tools: 'Sony FX3, Premiere Pro', desc: 'Atmospheric 4K videography highlighting the lush landscapes, backwaters, and vibrant culture of Kerala.' },
-            { id: 'w003', title: 'Urban Motion Graphics Intro', category: 'Motion Graphics', videoUrl: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ', thumbUrl: 'https://img.youtube.com/vi/aqz-KE-bpKQ/maxresdefault.jpg', year: '2025', tools: 'After Effects, Element 3D', desc: 'Sleek 3D motion typography and fluid title animations for brand campaign intros.' },
-            { id: 'w004', title: 'Wedding Event Teaser', category: 'Event Teaser', videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', thumbUrl: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg', year: '2025', tools: 'Premiere Pro, Color Grading', desc: 'Cinematic wedding teaser with dreamy color grading, slow-motion highlights, and emotional storytelling.' },
-            { id: 'w005', title: 'Viral Instagram Reel', category: 'Reels', videoUrl: 'https://www.youtube.com/watch?v=ScMzIvxBSi4', thumbUrl: 'https://img.youtube.com/vi/ScMzIvxBSi4/hqdefault.jpg', year: '2026', tools: 'Premiere Pro, Kinematic Captions', desc: 'Vertical format reel optimized for Instagram with dynamic punch-in cuts and engaging sound effects.' },
-            { id: 'w006', title: 'Product Color Grading Showreel', category: 'Color Grading', videoUrl: 'https://www.youtube.com/watch?v=L_LUpnjgPso', thumbUrl: 'https://img.youtube.com/vi/L_LUpnjgPso/hqdefault.jpg', year: '2025', tools: 'DaVinci Resolve, Premiere Pro', desc: 'Premium product color grading showcasing cinematic LUTs, skin tone correction, and brand-aligned visuals.' }
+            { id: 'work-alabaraha', title: 'Alabaraha Real Estate Commercial', category: 'Commercial', videoUrl: '/uploads/ALABARAHA_REALESTATE.mp4', thumbUrl: '', year: '2026', tools: 'Premiere Pro, After Effects, DaVinci Resolve', desc: 'High-impact commercial promo and real estate showcase edit featuring dynamic cuts, sleek typography, and color grading.' },
+            { id: 'work-lokha', title: 'Lokha Project', category: 'Videography', videoUrl: '/uploads/lokha.mp4', thumbUrl: '', year: '2026', tools: 'Sony FX3, Premiere Pro, Color Grading', desc: 'Atmospheric cinematic video edit showcasing immersive visual storytelling, rhythmic pacing, and high-energy cuts.' }
         ];
 
         /* ── STATE ── */
@@ -3155,14 +3203,17 @@
             if (!url) return false;
             const s = url.trim();
             if (/\.(mp4|webm|ogg|mov|mkv|avi)(\?.*)?$/i.test(s)) return true;
-            if (s.startsWith('/uploads/') || s.startsWith('blob:') || s.startsWith('file:') || s.startsWith('data:video')) return true;
+            if (s.includes('/uploads/') || s.includes('uploads/') || s.startsWith('blob:') || s.startsWith('file:') || s.startsWith('data:video')) return true;
             return false;
         }
         function getDirectVideoSrc(url) {
             if (!url) return '';
             let s = url.trim();
             if (/^[a-zA-Z]:\\/.test(s)) {
-                s = 'file:///' + s.replace(/\\/g, '/');
+                return 'file:///' + s.replace(/\\/g, '/');
+            }
+            if (window.location.protocol === 'file:' && s.startsWith('/')) {
+                return s.substring(1);
             }
             return s;
         }
@@ -3353,12 +3404,23 @@
             }
 
             grid.innerHTML = filtered.map(w => {
+                const isVid = isDirectVideo(w.videoUrl || '');
+                const vidSrc = isVid ? getDirectVideoSrc(w.videoUrl) : '';
                 const thumb = w.thumbUrl || getYtThumb(w.videoUrl || '') || '';
                 const toolsBadges = (w.tools || '').split(',').map(t => t.trim()).filter(Boolean).map(t => '<span class="admin-badge-pill">' + esc(t) + '</span>').join(' ');
                 const adminBtns = state.adminOpen ? '<div style="display:flex;gap:.4rem;"><button class="admin-action-btn" onclick="event.stopPropagation();adminEditWork(\'' + esc(w.id) + '\')" aria-label="Edit">Edit</button><button class="admin-action-btn danger" onclick="event.stopPropagation();deleteWork(\'' + esc(w.id) + '\')" aria-label="Delete">Delete</button></div>' : '';
 
+                let mediaHtml = '';
+                if (isVid && vidSrc) {
+                    mediaHtml = '<video class="card-thumb" src="' + esc(vidSrc) + '" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></video>';
+                } else if (thumb) {
+                    mediaHtml = '<img class="card-thumb" id="thumb-img-' + esc(w.id) + '" src="' + esc(thumb) + '" alt="' + esc(w.title) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" />';
+                } else {
+                    mediaHtml = '<div class="card-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg></div>';
+                }
+
                 // Background auto-capture thumbnail if missing
-                if (!w.thumbUrl && w.videoUrl) {
+                if (!w.thumbUrl && w.videoUrl && !isVid) {
                     extractVideoThumbnail(w.videoUrl).then(dataUrl => {
                         if (dataUrl) {
                             w.thumbUrl = dataUrl;
@@ -3375,10 +3437,7 @@
 
                 return '<div class="work-card" onclick="openModal(\'' + esc(w.id) + '\')" role="button" tabindex="0" aria-label="Play ' + esc(w.title) + '" onkeydown="if(event.key===\'Enter\')openModal(\'' + esc(w.id) + '\')">'
                     + '<div class="card-thumb-box">'
-                    + (thumb ? '<img class="card-thumb" id="thumb-img-' + esc(w.id) + '" src="' + esc(thumb) + '" alt="' + esc(w.title) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" />' : '')
-                    + '<div class="card-thumb-placeholder" ' + (thumb ? 'style="display:none"' : '') + '>'
-                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg>'
-                    + '</div>'
+                    + mediaHtml
                     + '<div class="card-overlay"></div>'
                     + '<div class="card-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>'
                     + '</div>'
@@ -3423,7 +3482,17 @@
             const container = document.getElementById('modal-video-container');
             if (isDirectVideo(w.videoUrl)) {
                 const src = getDirectVideoSrc(w.videoUrl);
-                container.innerHTML = '<video src="' + esc(src) + '" controls autoplay style="width:100%;height:100%;background:#000;object-fit:contain;"></video>';
+                container.innerHTML = '<video id="active-modal-vid" src="' + esc(src) + '" controls autoplay playsinline style="width:100%;height:100%;background:#000;object-fit:contain;"></video>';
+                setTimeout(() => {
+                    const v = document.getElementById('active-modal-vid');
+                    if (v) {
+                        v.play().catch(err => {
+                            console.log('Autoplay unmuted blocked by browser, playing muted:', err);
+                            v.muted = true;
+                            v.play().catch(() => {});
+                        });
+                    }
+                }, 50);
             } else {
                 container.innerHTML = '<iframe src="' + esc(getEmbedUrl(w.videoUrl)) + '" title="' + esc(w.title) + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
             }
@@ -3691,35 +3760,33 @@
                 targetMouseY = (e.clientY / height - 0.5) * 50;
             }, { passive: true });
 
-            // Keyframe diamond elements (Adobe AE & Premiere style keyframe particles)
+            // Floating geometric shapes and lines tuned for non-distracting 15% opacity
             const keyframes = [];
-            const KEYFRAME_COUNT = 55;
+            const KEYFRAME_COUNT = 14;
             const colors = [
-                'rgba(232, 255, 0, ',    // Neon Accent Yellow #e8ff00
-                'rgba(0, 242, 254, ',    // Cyan/Teal
-                'rgba(255, 106, 0, ',    // Vivid Orange
-                'rgba(168, 85, 247, ',   // AE Purple
-                'rgba(236, 72, 153, '    // Premiere Pink/Magenta
+                'rgba(232, 255, 0, ',    // Accent Yellow
+                'rgba(0, 242, 254, ',    // Cyan
+                'rgba(255, 255, 255, '   // White
             ];
 
             for (let i = 0; i < KEYFRAME_COUNT; i++) {
                 keyframes.push({
                     x: Math.random() * 1.15 - 0.075,
                     y: Math.random() * 2.5 - 0.25,
-                    z: Math.random() * 1.3 + 0.4,
-                    size: Math.random() * 14 + 7,
+                    z: Math.random() * 1.2 + 0.3,
+                    size: Math.random() * 8 + 4,
                     rotation: Math.random() * Math.PI * 2,
-                    rotSpeed: (Math.random() - 0.5) * 0.025,
-                    colorBase: colors[Math.floor(Math.random() * colors.length)],
-                    alpha: Math.random() * 0.4 + 0.35,
-                    shape: Math.floor(Math.random() * 3) // 0: Keyframe Diamond, 1: Film Frame, 2: Target Cross
+                    rotSpeed: (Math.random() - 0.5) * 0.006,
+                    colorBase: colors[i % colors.length],
+                    alpha: 0.15, // 15% opacity
+                    shape: i % 5 // Diverse geometric shapes (Diamonds, Rectangles, Circles, Triangles, Crosshairs)
                 });
             }
 
             let time = 0;
 
             function render() {
-                time += 0.018;
+                time += 0.012;
 
                 // Smooth scroll velocity interpolation
                 const prevScrollY = scrollY;
@@ -3735,98 +3802,45 @@
                 ctx.fillStyle = '#0a0a0a';
                 ctx.fillRect(0, 0, width, height);
 
-                // 1. Perspective Video Timeline Grid Lines
+                // Ambient background motion grid & vector lines at 15% opacity
                 ctx.save();
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
                 ctx.lineWidth = 1;
-                const gridSpacing = 70;
-                const offsetGridY = (scrollY * 0.2) % gridSpacing;
-
-                ctx.beginPath();
-                for (let y = -gridSpacing + offsetGridY; y < height + gridSpacing; y += gridSpacing) {
-                    ctx.moveTo(0, y);
-                    ctx.lineTo(width, y);
-                }
-                ctx.stroke();
-                ctx.restore();
-
-                // 2. Glowing Video Timeline Ribbon Tracks (V1, V2, A1 Tracks)
-                const ribbonTracks = [
-                    { color: '#00f2fe', yRatio: 0.25, freq: 0.002, amp: 75, speed: 0.001 },
-                    { color: '#ff6600', yRatio: 0.55, freq: 0.0028, amp: 95, speed: -0.0012 },
-                    { color: '#e8ff00', yRatio: 0.82, freq: 0.0018, amp: 65, speed: 0.0009 }
-                ];
-
-                ribbonTracks.forEach(track => {
-                    ctx.save();
+                const gridStep = 180;
+                for (let x = (mouseX * 0.15) % gridStep; x < width; x += gridStep) {
                     ctx.beginPath();
-                    const baseY = track.yRatio * height - (scrollY * 0.25);
-                    const wrappedY = ((baseY % (height * 1.5)) + (height * 1.5)) % (height * 1.5) - height * 0.25;
-
-                    ctx.moveTo(0, wrappedY);
-                    for (let x = 0; x <= width; x += 12) {
-                        const scrollWave = Math.sin(x * track.freq + time * track.speed * 100 + scrollY * 0.002) * (track.amp + Math.abs(scrollVelocity) * 1.3);
-                        ctx.lineTo(x, wrappedY + scrollWave + mouseY * 0.3);
-                    }
-
-                    ctx.strokeStyle = track.color;
-                    ctx.globalAlpha = Math.min(0.4 + Math.abs(scrollVelocity) * 0.02, 0.85);
-                    ctx.lineWidth = 3 + Math.min(Math.abs(scrollVelocity) * 0.1, 5);
-                    ctx.shadowColor = track.color;
-                    ctx.shadowBlur = 14;
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, height);
                     ctx.stroke();
-                    ctx.restore();
-                });
-
-                // 3. Playhead Marker Line (Sweeps across timeline)
-                ctx.save();
-                const playheadX = ((time * 60 + scrollY * 0.8) % (width * 1.4)) - width * 0.2;
-                ctx.strokeStyle = 'rgba(232, 255, 0, 0.4)';
-                ctx.lineWidth = 2;
-                ctx.shadowColor = '#e8ff00';
-                ctx.shadowBlur = 10;
-                ctx.beginPath();
-                ctx.moveTo(playheadX, 0);
-                ctx.lineTo(playheadX, height);
-                ctx.stroke();
-
-                // Top Playhead Diamond Head
-                ctx.fillStyle = '#e8ff00';
-                ctx.beginPath();
-                ctx.moveTo(playheadX, 15);
-                ctx.lineTo(playheadX + 8, 0);
-                ctx.lineTo(playheadX - 8, 0);
-                ctx.closePath();
-                ctx.fill();
+                }
                 ctx.restore();
 
-                // 4. Floating AE Keyframe Diamonds & Motion Graphics Elements
+                // Floating Geometric Shapes & Lines (15% Opacity)
                 keyframes.forEach((kf) => {
                     const screenX = kf.x * width + mouseX * kf.z;
-                    const rawY = (kf.y * height) - (scrollY * 0.45 * kf.z);
+                    const rawY = (kf.y * height) - (scrollY * 0.35 * kf.z);
                     const screenY = ((rawY % (height * 1.6)) + (height * 1.6)) % (height * 1.6) - height * 0.3;
 
-                    kf.rotation += kf.rotSpeed + scrollVelocity * 0.001;
+                    kf.rotation += kf.rotSpeed + scrollVelocity * 0.0005;
 
                     ctx.save();
                     ctx.translate(screenX, screenY);
                     ctx.rotate(kf.rotation);
 
-                    // Speed ramp motion blur scale effect on scroll
-                    const streakScaleY = 1 + Math.abs(scrollVelocity) * 0.08 * kf.z;
+                    // Subtle motion streak on scroll
+                    const streakScaleY = 1 + Math.min(Math.abs(scrollVelocity) * 0.03 * kf.z, 0.4);
                     ctx.scale(1, streakScaleY);
 
-                    const dynamicAlpha = Math.min(kf.alpha + Math.abs(scrollVelocity) * 0.01, 0.9);
-                    ctx.fillStyle = kf.colorBase + dynamicAlpha + ')';
-                    ctx.strokeStyle = kf.colorBase + Math.min(dynamicAlpha * 1.3, 1) + ')';
-                    ctx.lineWidth = 1.8;
-                    ctx.shadowColor = kf.colorBase + '0.9)';
-                    ctx.shadowBlur = 10 * kf.z;
+                    // Enforce 15% opacity (0.15 alpha)
+                    const shapeAlpha = 0.15;
+                    ctx.fillStyle = kf.colorBase + shapeAlpha + ')';
+                    ctx.strokeStyle = kf.colorBase + shapeAlpha + ')';
+                    ctx.lineWidth = 1.2;
 
                     const sz = kf.size * kf.z;
 
                     if (kf.shape === 0) {
-                        // AE Diamond Keyframe
+                        // AE Diamond Keyframe Shape
                         ctx.beginPath();
                         ctx.moveTo(0, -sz);
                         ctx.lineTo(sz * 0.85, 0);
@@ -3836,45 +3850,35 @@
                         ctx.fill();
                         ctx.stroke();
                     } else if (kf.shape === 1) {
-                        // Film Frame Rectangle
+                        // Geometric Rectangle / Film Frame Line
                         ctx.beginPath();
                         ctx.rect(-sz, -sz * 0.65, sz * 2, sz * 1.3);
                         ctx.stroke();
+                    } else if (kf.shape === 2) {
+                        // Concentric Motion Ring Line
                         ctx.beginPath();
-                        ctx.arc(0, 0, sz * 0.35, 0, Math.PI * 2);
-                        ctx.fill();
+                        ctx.arc(0, 0, sz * 0.8, 0, Math.PI * 2);
+                        ctx.stroke();
+                    } else if (kf.shape === 3) {
+                        // Geometric Vector Triangle
+                        ctx.beginPath();
+                        ctx.moveTo(0, -sz);
+                        ctx.lineTo(sz, sz * 0.85);
+                        ctx.lineTo(-sz, sz * 0.85);
+                        ctx.closePath();
+                        ctx.stroke();
                     } else {
-                        // Playhead Target Cross
+                        // Crosshair / Vector Guideline
                         ctx.beginPath();
-                        ctx.moveTo(-sz, 0); ctx.lineTo(sz, 0);
-                        ctx.moveTo(0, -sz); ctx.lineTo(0, sz);
+                        ctx.moveTo(-sz * 1.2, 0); ctx.lineTo(sz * 1.2, 0);
+                        ctx.moveTo(0, -sz * 1.2); ctx.lineTo(0, -sz * 1.2);
                         ctx.stroke();
                     }
 
                     ctx.restore();
                 });
 
-                // 5. Audio / Color Radar Scope Waveform
-                ctx.save();
-                const scopeWidth = 140;
-                const scopeX = width - scopeWidth - 24;
-                const scopeY = height - 40;
-                ctx.globalAlpha = 0.6 + Math.min(Math.abs(scrollVelocity) * 0.02, 0.35);
-                ctx.strokeStyle = '#e8ff00';
-                ctx.lineWidth = 2;
-                ctx.shadowColor = '#e8ff00';
-                ctx.shadowBlur = 8;
-                ctx.beginPath();
-                for (let i = 0; i < scopeWidth; i += 4) {
-                    const barH = Math.sin(i * 0.12 + time * 4 + scrollY * 0.01) * 16 + Math.abs(scrollVelocity) * 1.4 + 8;
-                    ctx.moveTo(scopeX + i, scopeY);
-                    ctx.lineTo(scopeX + i, scopeY - barH);
-                }
-                ctx.stroke();
-                ctx.fillStyle = '#ffffff';
-                ctx.font = '9px monospace';
-                ctx.fillText('COLOR / TIMELINE SCOPE', scopeX, scopeY + 14);
-                ctx.restore();
+                // (Scope radar waveform removed to declutter background)
 
                 requestAnimationFrame(render);
             }
@@ -3884,8 +3888,21 @@
 
         /* ── INIT ── */
         document.addEventListener('DOMContentLoaded', () => {
-            state.works = loadStorage() || DEFAULT_WORKS;
-            if (!loadStorage()) saveStorage();
+            // Reset state to default user works and clear old localStorage cache
+            localStorage.removeItem(LS_KEY);
+            state.works = DEFAULT_WORKS;
+            saveStorage();
+
+            fetch('/api/works')
+                .then(res => res.json())
+                .then(data => {
+                    if (Array.isArray(data) && data.length) {
+                        state.works = data;
+                        saveStorage();
+                        renderGrid();
+                    }
+                })
+                .catch(() => {});
 
             initTicker();
             initNavbar();
