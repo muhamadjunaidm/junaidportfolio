@@ -387,8 +387,15 @@
             flex-shrink: 0;
         }
 
+        .hero-stage {
+            position: relative;
+            width: 100%;
+            margin: 1.5rem 0 2.5rem;
+            text-align: center;
+        }
+
         .hero-title {
-            line-height: 0.98;
+            line-height: 0.95;
             letter-spacing: -0.03em;
             margin-bottom: 0;
             position: relative;
@@ -419,16 +426,16 @@
             /* in front of portrait */
         }
 
-        /* ── PORTRAIT — absolutely centred, overlapping title ── */
+        /* ── PORTRAIT — absolutely centred in title stage ── */
         .hero-portrait-abs {
             position: absolute;
-            bottom: 4.5rem;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -46%);
             z-index: 2;
             /* above solid text, below stroke text */
             pointer-events: none;
-            width: clamp(220px, 26vw, 400px);
+            width: clamp(200px, 24vw, 340px);
         }
 
         .hero-portrait-abs img {
@@ -441,24 +448,25 @@
             mix-blend-mode: multiply;
         }
 
-        /* Badge below portrait */
+        /* Badge attached to bottom of portrait */
         .portrait-badge {
             position: absolute;
-            bottom: 0.5rem;
+            bottom: -0.75rem;
             left: 50%;
             transform: translateX(-50%);
             background: var(--white);
             color: var(--black);
-            font-size: 0.6rem;
+            font-size: 0.62rem;
             font-weight: 700;
             letter-spacing: 0.14em;
-            padding: 0.28rem 0.8rem;
+            padding: 0.3rem 0.85rem;
             border-radius: 99px;
             white-space: nowrap;
             z-index: 4;
             display: flex;
             align-items: center;
             gap: 0.4rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
         }
 
         /* ── BOTTOM BAR ── */
@@ -467,7 +475,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
             position: relative;
             z-index: 4;
             flex-wrap: wrap;
@@ -1968,8 +1976,7 @@
                 min-height: auto;
             }
             .hero-portrait-abs {
-                width: clamp(160px, 36vw, 260px);
-                bottom: 3.5rem;
+                width: clamp(160px, 30vw, 250px);
             }
             .hero-bottom-row {
                 justify-content: center;
@@ -2214,8 +2221,7 @@
                 font-size: clamp(1.8rem, 8vw, 3rem);
             }
             .hero-portrait-abs {
-                width: clamp(130px, 40vw, 200px);
-                bottom: 2.5rem;
+                width: clamp(130px, 36vw, 190px);
             }
             .hero-bottom-row {
                 margin-top: 1.5rem;
@@ -2664,19 +2670,22 @@
                 </div>
             </div>
 
-            <!-- Portrait: absolutely centred, overlapping both title lines -->
-            <div class="hero-portrait-abs">
-                <img src="hero_portrait.png" alt="Junaid - Freelance Video Editor and Videographer, Malappuram Kerala"
-                    onerror="this.style.display='none';document.getElementById('portrait-fallback').style.display='flex';" />
-                <div id="portrait-fallback"
-                    style="display:none;align-items:center;justify-content:center;font-size:4rem;">&#127916;</div>
-                <div class="portrait-badge"><span class="status-dot"></span>JUNAID &middot; VIDEO EDITOR</div>
-            </div>
+            <!-- TITLE STAGE (Hero Title & Overlapping Portrait) -->
+            <div class="hero-stage">
+                <!-- Portrait: absolutely centred inside title stage -->
+                <div class="hero-portrait-abs">
+                    <img src="hero_portrait.png" alt="Junaid - Freelance Video Editor and Videographer, Malappuram Kerala"
+                        onerror="this.style.display='none';document.getElementById('portrait-fallback').style.display='flex';" />
+                    <div id="portrait-fallback"
+                        style="display:none;align-items:center;justify-content:center;font-size:4rem;">&#127916;</div>
+                    <div class="portrait-badge"><span class="status-dot"></span>JUNAID &middot; VIDEO EDITOR</div>
+                </div>
 
-            <!-- TITLE - z-index layered around portrait -->
-            <div class="hero-title reveal reveal-delay-1">
-                <span class="hero-title-solid">Video Editor</span>
-                <span class="hero-title-stroke">&amp; Videographer</span>
+                <!-- TITLE - z-index layered around portrait -->
+                <div class="hero-title reveal reveal-delay-1">
+                    <span class="hero-title-solid">Video Editor</span>
+                    <span class="hero-title-stroke">&amp; Videographer</span>
+                </div>
             </div>
 
             <!-- BOTTOM BAR -->
