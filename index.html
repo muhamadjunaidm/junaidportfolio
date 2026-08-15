@@ -299,13 +299,12 @@
 
 
 
-        /* ─── HERO ──────────────────────────────────────────────── */
+        /* ─── HERO (SIDE CHARACTER LAYOUT) ──────────────────────── */
         .hero {
-            min-height: 100vh;
+            min-height: 88vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 96px 2.5rem 3.5rem;
+            align-items: center;
+            padding: 100px 2.5rem 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -320,19 +319,29 @@
             z-index: 0;
         }
 
-        .hero-inner {
-            position: relative;
-            z-index: 1;
+        .hero-layout-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.85fr;
+            gap: 3.5rem;
+            align-items: center;
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.75rem;
         }
 
         .hero-meta-row {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            gap: 1.25rem;
             flex-wrap: wrap;
         }
 
@@ -360,15 +369,8 @@
         }
 
         @keyframes pulse-dot {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.35;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.35; }
         }
 
         .location-pill {
@@ -387,86 +389,91 @@
             flex-shrink: 0;
         }
 
-        .hero-stage {
-            position: relative;
-            width: 100%;
-            margin: 1.5rem 0 3.5rem;
-            text-align: center;
-        }
-
         .hero-title {
-            line-height: 0.95;
+            line-height: 1.02;
             letter-spacing: -0.03em;
             margin-bottom: 0;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-title-solid {
             display: block;
             font-family: 'Syne', sans-serif;
-            font-size: clamp(2.5rem, 7vw, 7rem);
+            font-size: clamp(2.6rem, 5.2vw, 5.8rem);
             font-weight: 800;
             color: var(--white);
-            position: relative;
-            z-index: 1;
-            /* behind portrait */
         }
 
         .hero-title-stroke {
             display: block;
             font-family: 'Syne', sans-serif;
-            font-size: clamp(2.5rem, 7vw, 7rem);
+            font-size: clamp(2.6rem, 5.2vw, 5.8rem);
             font-weight: 800;
             color: transparent;
-            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
             letter-spacing: -0.03em;
+        }
+
+        /* ── CHARACTER PORTRAIT SIDE CARD ── */
+        .hero-portrait-side {
             position: relative;
-            z-index: 3;
-            /* in front of portrait */
-        }
-
-        /* ── PORTRAIT — absolutely centred in title stage ── */
-        .hero-portrait-abs {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            /* above solid text, below stroke text */
-            pointer-events: none;
-            width: clamp(140px, 16vw, 240px);
-        }
-
-        .hero-portrait-abs img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            filter: grayscale(8%);
-            /* Blends white bg away on dark page */
-            mix-blend-mode: multiply;
         }
 
-        /* Badge attached to bottom of portrait */
-        .portrait-badge {
-            position: absolute;
-            bottom: -0.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--white);
-            color: var(--black);
-            font-size: 0.62rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            padding: 0.3rem 0.85rem;
-            border-radius: 99px;
-            white-space: nowrap;
-            z-index: 4;
+        .hero-portrait-card {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 1rem 1rem 1.25rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            transition: var(--transition);
+        }
+
+        .hero-portrait-card:hover {
+            border-color: rgba(255, 255, 255, 0.28);
+            transform: translateY(-4px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .portrait-image-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/5;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--charcoal);
+        }
+
+        .portrait-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            filter: grayscale(10%);
+        }
+
+        .portrait-card-badge {
+            margin-top: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--white);
+            color: var(--black);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            padding: 0.55rem 1.2rem;
+            border-radius: 99px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
 
         /* ── BOTTOM BAR ── */
@@ -1969,32 +1976,32 @@
             }
         }
 
-        /* ── TABLET (≤900px) ────────────────────────────────── */
-        @media (max-width: 900px) {
+        /* ── TABLET (≤960px) ────────────────────────────────── */
+        @media (max-width: 960px) {
             .hero {
                 padding: 88px 1.5rem 2.5rem;
                 min-height: auto;
             }
-            .hero-portrait-abs {
-                width: clamp(120px, 20vw, 190px);
+            .hero-layout-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
-            .hero-bottom-row {
-                justify-content: center;
-                flex-direction: column;
+            .hero-text-col {
                 align-items: center;
-                gap: 1.5rem;
+                text-align: center;
+            }
+            .hero-portrait-card {
+                max-width: 320px;
+                margin: 0 auto;
             }
             .hero-title-solid,
             .hero-title-stroke {
                 white-space: normal;
                 text-align: center;
+                font-size: clamp(2.2rem, 6.5vw, 4.5rem);
             }
-            .hero-meta-row {
-                justify-content: center;
-            }
-            .hero-ctas {
-                justify-content: center;
-            }
+            .hero-meta-row,
+            .hero-ctas,
             .hero-software {
                 justify-content: center;
             }
@@ -2654,42 +2661,29 @@
         </button>
     </nav>
 
-    <!-- ════════════════════ HERO ════════════════════ -->
+    <!-- ════════════════════ HERO (SIDE CHARACTER LAYOUT) ════════════════════ -->
     <header class="hero" id="home">
-        <div class="hero-inner">
-            <div class="hero-meta-row reveal">
-                <div class="status-pill">
-                    <span class="status-dot"></span>Available for Projects
-                </div>
-                <div class="location-pill">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                    Malappuram, Kerala, India
-                </div>
-            </div>
-
-            <!-- TITLE STAGE (Hero Title & Overlapping Portrait) -->
-            <div class="hero-stage">
-                <!-- Portrait: absolutely centred inside title stage -->
-                <div class="hero-portrait-abs">
-                    <img src="hero_portrait.png" alt="Junaid - Freelance Video Editor and Videographer, Malappuram Kerala"
-                        onerror="this.style.display='none';document.getElementById('portrait-fallback').style.display='flex';" />
-                    <div id="portrait-fallback"
-                        style="display:none;align-items:center;justify-content:center;font-size:4rem;">&#127916;</div>
-                    <div class="portrait-badge"><span class="status-dot"></span>JUNAID &middot; VIDEO EDITOR</div>
+        <div class="hero-layout-grid">
+            <!-- LEFT COLUMN: Headline, Meta, Tools & CTAs -->
+            <div class="hero-text-col reveal">
+                <div class="hero-meta-row">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>Available for Projects
+                    </div>
+                    <div class="location-pill">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        Malappuram, Kerala, India
+                    </div>
                 </div>
 
-                <!-- TITLE - z-index layered around portrait -->
                 <div class="hero-title reveal reveal-delay-1">
-                    <span class="hero-title-solid">Video Editor</span>
+                    <h1 class="hero-title-solid">Video Editor</h1>
                     <span class="hero-title-stroke">&amp; Videographer</span>
                 </div>
-            </div>
 
-            <!-- BOTTOM BAR -->
-            <div class="hero-bottom-row">
                 <!-- Software Badges -->
                 <div class="hero-software reveal reveal-delay-2">
                     <div class="sw-badge"><span class="sw-icon ae">Ae</span>After Effects</div>
@@ -2715,6 +2709,21 @@
                         </svg>
                         WhatsApp Me
                     </a>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Character Portrait Side Card -->
+            <div class="hero-portrait-side reveal reveal-delay-2">
+                <div class="hero-portrait-card">
+                    <div class="portrait-image-wrap">
+                        <img src="hero_portrait.png" alt="Junaid - Video Editor and Videographer, Malappuram Kerala"
+                            onerror="this.style.display='none';document.getElementById('portrait-fallback-side').style.display='flex';" />
+                        <div id="portrait-fallback-side"
+                            style="display:none;align-items:center;justify-content:center;font-size:4rem;height:100%;background:var(--charcoal);">🎬</div>
+                    </div>
+                    <div class="portrait-card-badge">
+                        <span class="status-dot"></span> JUNAID &middot; VIDEO EDITOR
+                    </div>
                 </div>
             </div>
         </div>
